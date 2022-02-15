@@ -1,0 +1,61 @@
+/*seccion de menu backgroud*/
+*{
+margin : 0px;
+padding: 0px;
+box-sizing: border-box;
+background-image: url("resources/fondo menu.jpg");
+background-size: cover;
+background-attachment: fixed;
+
+}
+
+/*titulo de la serie*/
+.content {
+
+    width: 600px;
+    height: 450px;
+    line-height: 400px;
+    margin:auto;
+    padding:0%; 
+
+}
+
+.content img{
+
+    vertical-align: middle;
+    display:fixed;
+    
+    
+}
+
+/* seccion de portales*/
+
+.flex-container{
+
+    display:flex;
+    float: inline-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.flex-container div{
+    width: 20px;
+    height: 20px;
+    margin: 80%;
+    padding: 50%;
+}
+
+.flex-container img {
+    
+    margin: 10px;
+    width:10%;
+  
+
+}
+
+.scaled{
+    transform: scale(1,0.5);
+
+
+}
