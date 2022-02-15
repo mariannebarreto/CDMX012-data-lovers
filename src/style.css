@@ -1,0 +1,25 @@
+/*PORTADA DE INICIO¨*/
+
+#welcomePortal{
+    background-color: black;
+}
+.logoStyle{
+    width: 800px;
+    height: 250px;
+}
+.portalStyle{
+    width: 500px;
+    height:450px;
+    border-radius: 300px;
+}
+.captionPortal{
+    font-family: 'Share Tech Mono', monospace;
+    color: rgb(94, 255, 0);
+    font-size: 1cm;
+}
+
+/*MENU*/
+.menuBackGround{
+background-image: url('./resources/fondo-menu.jpg');
+background-size: cover;
+}
