@@ -23,3 +23,22 @@
 background-image: url('./resources/fondo-menu.jpg');
 background-size: cover;
 }
+
+/*A TO Z----Z TO A*/
+
+.aTOzBackGround{
+background-image: url('./resources/fondo-abc.png');
+background-size: cover;
+}
+
+/*SPECIES*/
+.speciesBackGround{
+background-image: url('./resources/fondo-especies.jpg');
+background-size: cover;
+}
+
+/*WOMEN*/
+.womenBackGround{
+    background-image: url('./resources/fondo-mujeres.jpg');
+    background-size: cover;
+    }
