@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 /*PORTADA DE INICIO¨*/
 
 #welcomePortal{
@@ -11,6 +14,11 @@
     width: 500px;
     height:450px;
     border-radius: 300px;
+    margin:auto;
+  top: 50%;
+  left: 50%;
+  margin-top: 65px;
+  margin-left: 550px;
 }
 .captionPortal{
     font-family: 'Share Tech Mono', monospace;
@@ -24,11 +32,45 @@ background-image: url('./resources/fondo-menu.jpg');
 background-size: cover;
 }
 
+/*{
+margin : 0px;
+padding: 0px;
+box-sizing: border-box;
+}*/
+
+.flex-container{
+display:flex;
+float: inline-end;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+    
+.flex-container div{
+width: 220px;
+height: 220px;
+margin: 80%;
+padding: 50%;
+}
+    
+.flex-container img {
+margin: 10px;
+width:10%;
+}
+    
+.scaled{
+transform: scale(1,0.5);
+}
+
+/*BOTONES DE PORTAL*/
+
+
+
+
 /*A TO Z----Z TO A*/
 
 .aTOzBackGround{
 background-image: url('./resources/fondo-abc.png');
-background-size: cover;
+background-size:cover; 
 }
 
 /*SPECIES*/
@@ -39,6 +81,18 @@ background-size: cover;
 
 /*WOMEN*/
 .womenBackGround{
-    background-image: url('./resources/fondo-mujeres.jpg');
-    background-size: cover;
-    }
+background-image: url('./resources/fondo-mujeres.jpg');
+background-size: cover;
+}
+
+/*MEN*/
+.menBackGround{
+background-image: url('./resources/fondo-hombres.jpg');
+ background-size: cover;
+}
+
+/*EPISODES*/
+.episodesBackGround{
+    background-image: url('./resources/fondo-episodios.jpg');
+     background-size: cover;
+}
