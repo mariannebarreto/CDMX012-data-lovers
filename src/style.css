@@ -28,7 +28,7 @@ body{
 
 /*MENU*/
 .menuBackGround{
-background-image: url('./resources/fondo-menu.jpg');
+background-image: url('./assets/fondo-menu.jpg');
 background-size: cover;
 }
 
@@ -69,30 +69,30 @@ transform: scale(1,0.5);
 /*A TO Z----Z TO A*/
 
 .aTOzBackGround{
-background-image: url('./resources/fondo-abc.png');
+background-image: url('./assets/fondo-abc.png');
 background-size:cover; 
 }
 
 /*SPECIES*/
 .speciesBackGround{
-background-image: url('./resources/fondo-especies.jpg');
+background-image: url('./assets/fondo-especies.jpg');
 background-size: cover;
 }
 
 /*WOMEN*/
 .womenBackGround{
-background-image: url('./resources/fondo-mujeres.jpg');
+background-image: url('./assets/fondo-mujeres.jpg');
 background-size: cover;
 }
 
 /*MEN*/
 .menBackGround{
-background-image: url('./resources/fondo-hombres.jpg');
+background-image: url('./assets/fondo-hombres.jpg');
  background-size: cover;
 }
 
 /*EPISODES*/
 .episodesBackGround{
-    background-image: url('./resources/fondo-episodios.jpg');
+    background-image: url('./assets/fondo-episodios.jpg');
      background-size: cover;
 }
