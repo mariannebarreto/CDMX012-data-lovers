@@ -124,7 +124,7 @@ background-size:cover;
 }
 
 
-#contenedorTarjetas{
+#cardContainer{
     margin-top: 6em;
     margin-bottom: 30em;
     padding-bottom: 10%;
@@ -133,7 +133,7 @@ background-size:cover;
     left:2em ;
     display: block;
     grid-template-columns: repeat(3,1fr);
-    width: 65vw;
+    flex-direction: row;
     height: auto;
     gap: 0.1em;
     margin:1%;
