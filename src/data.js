@@ -25,4 +25,7 @@ export const maleSeccOrder = (resultsData) => {
   }
   return resultsMale;
 }
- 
+export const maleInfo = (results) => {
+  return ( results.filter(element => element.gender == "Female")) 
+
+ }
