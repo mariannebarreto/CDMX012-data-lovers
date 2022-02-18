@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    font-family: 'Share Tech Mono', monospace;
 }
 /*PORTADA DE INICIO¨*/
 
@@ -21,7 +22,6 @@ body{
   margin-left: 550px;
 }
 .captionPortal{
-    font-family: 'Share Tech Mono', monospace;
     color: rgb(94, 255, 0);
     font-size: 1cm;
 }
@@ -36,7 +36,6 @@ background-color: transparent;
 margin: 0;
 text-decoration: none;  
 box-sizing: border-box;
-font-family: 'Share Tech Mono', monospace;
 }
 
 .flex-container{
@@ -172,12 +171,14 @@ background-size: cover;
 .womenBackGround{
 background-image: url('./assets/fondo-mujeres.jpg');
 background-size: cover;
+color:white;
 }
 
 /*MEN*/
 .menBackGround{
 background-image: url('./assets/fondo-hombres.jpg');
  background-size: cover;
+ color: white;
 }
 
 /*EPISODES*/
