@@ -1,12 +1,12 @@
-//****************DECLARAMOS FUNCIONES PARA CADA SECCION ******/
+//****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
 
 //ordenado alfabético
-export const alphabeticOrder = (resultsData) => resultsData.sort((character1, character2) => {
-  return (character1.name < character2.name) ? -1 : 1; //algoritmo de ordenamiento
+export const alphabeticOrder= (resultsData) => resultsData.sort((character1, character2) => {
+  return (character1.name < character2.name)? -1 : 1; //algoritmo de ordenamiento
 });
 
-export const alphabeticOrderBack = (resultsData) => resultsData.sort((character1, character2) => {
-  return (character1.name > character2.name) ? -1 : 1;
+export const alphabeticOrderBack= (resultsData) => resultsData.sort((character1, character2) => {
+  return (character1.name > character2.name)? -1 : 1;
 });
 
 // status personaje

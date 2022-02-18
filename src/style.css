@@ -119,7 +119,6 @@ background-size:contain;
 /*a to z tarjetas*/
 #aTOz{
     color: white;
-    font-family:'Share Tech Mono', monospace;
 }
 
 
@@ -164,6 +163,43 @@ background-size:contain;
 .speciesBackGround{
 background-image: url('./assets/fondo-especies.jpg');
 background-size: cover;
+color: white;
+}
+
+#cardContainerSpecies{
+    margin-top: 6em;
+    margin-bottom: 30em;
+    padding-bottom: 10%;
+    position: relative;
+    top: 2em;
+    left:2em ;
+    display: block;
+    grid-template-columns: repeat(3,1fr);
+    flex-direction: row;
+    height: auto;
+    gap: 0.1em;
+    margin:1%;
+    background-color: transparent;
+
+ 
+}
+
+#cardSpecies{
+    display:inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    height:380px;
+    width:200px;
+    overflow: hidden;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 1% 2% 2% 1%;
+    border-radius: 15px;
+    border:4px solid rgb(0, 217, 255);
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.397);
 }
 
 /*WOMEN*/

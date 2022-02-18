@@ -1,7 +1,11 @@
 //declaramos de donde obtendremos nuestra data
+
 import data from './data/rickandmorty/rickandmorty.js';
-const resultsData = data.results;                                                  //variable que guarda y accede al array [results]
-import {alphabeticOrder, alphabeticOrderBack, characterStatus,} from './data.js';//importando las funciones a usar
+// *** CHECAR POR QUÉ NO ESTÁ FUNCIONANDO***** import {alphabeticOrder, alphabeticOrderBack, characterStatus} from './data.js';
+
+const resultsData = data.results;    
+
+
 
 window.onload = function reviewData() {    // esta funcion se ejecuta en cada recarga de la pagina
     for(let i=0;i < resultsData.length; i++){            //recorremos la data
@@ -52,3 +56,6 @@ window.onload = function reviewData() {    // esta funcion se ejecuta en cada re
   
     document.getElementById("characterImg").src = cardImage
   }
+
+  //*******************SPECIES SECTION*******************/
+
