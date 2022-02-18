@@ -12,6 +12,7 @@ let resultsData = data.results;
 /*console.log(resultsData[1].name)*/
 alphabeticOrder ( resultsData )
 for (let i = 0; i <= 10; i++){ //ciclo
+    
 
     /*console.log(resultsData [i].name)*/
 }
