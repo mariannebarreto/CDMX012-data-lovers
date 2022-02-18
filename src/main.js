@@ -1,14 +1,14 @@
 //declaramos de donde obtendremos nuestra data
 
 import data from './data/rickandmorty/rickandmorty.js';
-// *** CHECAR POR QUÉ NO ESTÁ FUNCIONANDO***** import {alphabeticOrder, alphabeticOrderBack, characterStatus} from './data.js';
+import {alphabeticOrder} from './data.js';
 
 const resultsData = data.results;    
-
+const abcOrder= alphabeticOrder; 
 
 
 window.onload = function reviewData() {    // esta funcion se ejecuta en cada recarga de la pagina
-    for(let i=0;i < resultsData.length; i++){            //recorremos la data
+    for(let i=0;i < resultsData.length; i++){            //recorremos la data (++)
        const cardName    = resultsData[i]["name"];            //accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
        const cardStatus    = resultsData[i].status;
        const cardOrigin    = resultsData[i].origin.name;
