@@ -1,7 +1,7 @@
 body{
     background-color: black;
     font-family: 'Share Tech Mono', monospace;
-    flex-wrap: wrap;
+    box-sizing: border-box;
 
     /*PORTADA DE INICIO¨*/
 
@@ -35,6 +35,8 @@ flex-wrap: wrap;
 margin: 0;
 color: white;  
 }
+
+
 
 aside{
     height: auto;
@@ -80,21 +82,6 @@ p{
 
 
 /*BOTONES DE PORTAL*/
-
-
-
-
-/*A TO Z----Z TO A*/
-
-.aTOzBackGround{
-background-image: url('./assets/fondo-abc.png');
-background-size:contain; 
-}
-
-/*a to z tarjetas*/
-#aTOz{
-    color: white;
-}
 
 
 .cardContainer{/*contenedor de tarjetas*/
