@@ -11,7 +11,7 @@ export const alphabeticOrderBack= (resultsData) => resultsData.sort((character1,
 
 // status personaje
   
-//****export const characterStatus = (data) => {
+export const characterStatus = (data) => {
   let alive = 0;
   let dead = 0;
   let unknown = 0;

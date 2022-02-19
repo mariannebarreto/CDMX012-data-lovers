@@ -122,25 +122,22 @@ background-size:contain;
 }
 
 
-#cardContainer{
+.cardContainer{/*contenedor de tarjetas*/
     margin-top: 6em;
     margin-bottom: 30em;
     padding-bottom: 10%;
+    display:flex;
     position: relative;
-    top: 2em;
-    left:2em ;
-    display: block;
-    grid-template-columns: repeat(3,1fr);
     flex-direction: row;
     height: auto;
     gap: 0.1em;
-    margin:1%;
+    margin:20px;
     background-color: transparent;
 
  
 }
 
-#card{
+.card{ /*dentro de la tarjeta*/
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
