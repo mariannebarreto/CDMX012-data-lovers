@@ -1,74 +1,49 @@
 body{
     background-color: black;
     font-family: 'Share Tech Mono', monospace;
-}
-/*PORTADA DE INICIO¨*/
+    flex-wrap: wrap;
 
-#welcomePortal{
-    background-color: black;
+    /*PORTADA DE INICIO¨*/
+
 }
 .logoStyle{
     width: 800px;
     height: 250px;
 }
 .portalStyle{
-    width: 500px;
-    height:450px;
-    border-radius: 300px;
-    margin:auto;
-  top: 50%;
-  left: 50%;
-  margin-top: 65px;
-  margin-left: 550px;
+width: 500px;
+height:450px;
+border-radius: 300px;
+margin:auto;
+top: 50%;
+left: 50%;
+margin-top: 65px;
+margin-left: 550px;
 }
+
 .captionPortal{
-    color: rgb(94, 255, 0);
-    font-size: 1cm;
+color: rgb(94, 255, 0);
+font-size: 1cm;
 }
 
 /*MENU*/
 .menuBackGround{
 background-image: url('./assets/fondo-menu.jpg');
-background-size: cover;
+background-size: auto;
 height: auto;  width: auto; 
 flex-wrap: wrap;
-background-color: transparent;
 margin: 0;
-text-decoration: none;  
-box-sizing: border-box;
-}
-
-.flex-container{
-display:flex;
-float: inline-end;
-justify-content: space-between;
-flex-wrap: wrap;
-}
-    
-.flex-container div{
-width: 220px;
-height: 220px;
-margin: 80%;
-padding: 50%;
-}
-    
-.flex-container img {
-margin: 10px;
-width:10%;
-}
-    
-.scaled{
-transform: scale(1,0.5);
+color: white;  
 }
 
 aside{
     height: auto;
+    width: 200px;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
     padding: auto;
-    width: 200px;
-    margin-left: 20px;
+    margin-left: 50px;
+    margin-top: 200px;
     border-radius: 20px;
     background-color: rgb(22, 141, 22);
     border: rgb(138, 238, 8) 2px solid;
@@ -126,25 +101,23 @@ background-size:contain;
     margin-top: 6em;
     margin-bottom: 30em;
     padding-bottom: 10%;
-    display:flex;
-    position: relative;
+    display:grid;
+    position: center;
+    grid-template-columns: repeat(5,1fr); 
     flex-direction: row;
     height: auto;
-    gap: 0.1em;
-    margin:20px;
-    background-color: transparent;
-
- 
+    gap: 0.5em;
+    margin: 5px; 
 }
 
-.card{ /*dentro de la tarjeta*/
+.card{ 
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    height:420px;
-    width:200px;
+    height:400px;
+    width:220px;
     overflow: hidden;
-    margin-left:auto;
+    margin-left:40px;
     margin-right:auto;
     padding: 1% 2% 2% 1%;
     border-radius: 15px;
