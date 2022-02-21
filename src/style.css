@@ -1,16 +1,14 @@
 body{
     background-color: black;
+    font-family: 'Share Tech Mono', monospace;
+    box-sizing: border-box;
 }
-/*PORTADA DE INICIO¨*/
 
-#welcomePortal{
-    background-color: black;
-}
 .logoStyle{
     width: 800px;
     height: 250px;
- 
 }
+
 .portalStyle{
     width: 500px;
     height:450px;
@@ -31,47 +29,7 @@ body{
 /*MENU*/
 .menuBackGround{
 background-image: url('./assets/fondo-menu.jpg');
-background-size: cover;
-height: auto;  width: auto; 
-flex-wrap: wrap;
-background-color: transparent;
-margin: 0;
-text-decoration: none;  
-box-sizing: border-box;
-font-family: 'Share Tech Mono', monospace;
-}
 
-.flex-container{
-display:flex;
-float: inline-end;
-justify-content: space-between;
-flex-wrap: wrap;
-}
-    
-.flex-container div{
-width: 220px;
-height: 220px;
-margin: 80%;
-padding: 50%;
-}
-    
-.flex-container img {
-margin: 10px;
-width:10%;
-}
-    
-.scaled{
-transform: scale(1,0.5);
-}
-
-aside{
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    padding: auto;
-    width: 200px;
-    margin-left: 20px;
     border-radius: 20px;
     background-color: rgb(22, 141, 22);
     border: rgb(138, 238, 8) 2px solid;
@@ -106,26 +64,6 @@ p{
 }
 
 
-
-/*BOTONES DE PORTAL*/
-
-
-
-
-/*A TO Z----Z TO A*/
-
-.aTOzBackGround{
-background-image: url('./assets/fondo-abc.png');
-background-size:cover; 
-}
-
-/*a to z tarjetas*/
-#aTOz{
-    color: white;
-    font-family:'Share Tech Mono', monospace;
-}
-
-
 #contenedorTarjetas{
     margin-top: 6em;
     margin-bottom: 30em;
@@ -135,13 +73,22 @@ background-size:cover;
     left:2em ;
     display: block;
     grid-template-columns: repeat(3,1fr);
+    flex-direction: row;
     width: 65vw;
     height: auto;
     gap: 0.1em;
     margin:1%;
     background-color: transparent;
-    /* display: none; */
+
+
  
+}
+
+#cardSpecies{
+    display:inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    height:380px; 
 }
 
 #tarjeta{
@@ -161,29 +108,4 @@ background-size:cover;
     text-align:center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.397);
-}
-
-
-/*SPECIES*/
-.speciesBackGround{
-background-image: url('./assets/fondo-especies.jpg');
-background-size: cover;
-}
-
-/*WOMEN*/
-.womenBackGround{
-background-image: url('./assets/fondo-mujeres.jpg');
-background-size: cover;
-}
-
-/*MEN*/
-.menBackGround{
-background-image: url('./assets/fondo-hombres.jpg');
- background-size: cover;
-}
-
-/*EPISODES*/
-.episodesBackGround{
-    background-image: url('./assets/fondo-episodios.jpg');
-     background-size: cover;
 }

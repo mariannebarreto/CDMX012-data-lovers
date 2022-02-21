@@ -1,8 +1,4 @@
-// estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
 //****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
 
 //ordenado alfabético
