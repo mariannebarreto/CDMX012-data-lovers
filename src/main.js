@@ -1,107 +1,112 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-// import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
+import generatorHtml from "./generatorHtml.js"
+import { alphabeticOrder } from "./data.js";
+import { alphabeticOrderBack } from "./data.js";
+import { maleOrder } from "./data.js";
+import { femaleOrder } from "./data.js";
+import { speciesOrder } from "./data.js";
+//import { Episode } from "./data.js";
 
-/*console.log(example, data);*/
+//let order = document.getElementById("order")
+const resultsData = data.results;
 
-/* funcion jalar seccion Male*/
-import { alphabeticOrder, maleSeccOrder, maleInfo } from './data.js';
-
-let resultsData = data.results;
-/*console.log(resultsData[1].name)*/
-alphabeticOrder ( resultsData )
-for (let i = 0; i <= 10; i++){ //ciclo
-    
-
-    /*console.log(resultsData [i].name)*/
-}
-/* guardar variable de Male*/
-maleSeccOrder(resultsData);//llamar a la funcion
-
-const resultsMale = [];
-
- /*resultsMale = maleSeccOrder(resultsData);//resultados se guardan en la variable*/
-
-let maleData = document.getElementById("men");
-
-let maleHtml = ``
-
-let maleFilter = maleInfo(resultsData);
-
-/*maleFilter.forEach(girls=>{
-    
-    maleHtml += '<h3>${girls.name}</h3>'
-
-    
+window.addEventListener('DOMContentLoaded', () => {
+    // for(let i=0;i < dataHTML.length; i++){
+    let allHTML = ""
+    let allCards = document.getElementById("allCards")
+    resultsData.forEach(character => {
+        allHTML += generatorHtml(character)
+    })
+    allCards.innerHTML = allHTML
+    //}
+});
+///a z
+/*order.addEventListener('change',(event)=>{
+    alphabeticOrder(dataHTML)/// mandar la data aqui
+    console.log("Recibi ...",event.target.value)
 });*/
-maleFilter.forEach(movie=>{
-    maleHtml+=`<article><h3>${movie.name}</h3></article>`
+
+/*order.addEventListener('change',(event)=>{
+    alphabeticOrderBack(dataHTML)/// mandar la data aqui
+    console.log("Recibi ...",event.target.value)
+})*/
+//pruebas del domingo se comentan lineas anteriores para que funcione el filtro A-Z, se crea un boton de prueba
+let allCards = document.getElementById("allCards")
+let buttonTest = document.getElementById("testButton");
+buttonTest.addEventListener("click", (event) => {
+    let alphabeticOrderResults = alphabeticOrder(resultsData);
+    let allHTML = ""
+    resultsData.forEach(alphabeticOrderResults => {
+        allHTML += generatorHtml(alphabeticOrderResults);
+    })
+    allCards.innerHTML = allHTML;
+});
+//boton z-a
+let testButton2 = document.getElementById("testButton2");
+testButton2.addEventListener("click", (event) => {
+    let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);
+    let allHTML = ""
+    resultsData.forEach(alphabeticOrderBackResults => {
+        allHTML += generatorHtml(alphabeticOrderBackResults);
+    })
+    allCards.innerHTML = allHTML;
+});
+//boton Male
+let testButton3 = document.getElementById("testButton3");
+testButton3.addEventListener("click", (event) => {
+    let maleOrderResults = maleOrder(resultsData);
+    let allHTML = ""
+    for (let i = 0; i < maleOrderResults.length; i++) {
+        allHTML += generatorHtml(maleOrderResults[i]);
+    }
+    allCards.innerHTML = allHTML;
+});
+//boton Female
+let testButton4 = document.getElementById("testButton4");
+testButton4.addEventListener("click", (event) => {
+    let femaleOrderResults = femaleOrder(resultsData);
+    let allHTML = ""
+    for (let i = 0; i < femaleOrderResults.length; i++) {
+        allHTML += generatorHtml(femaleOrderResults[i]);
+    }
+    allCards.innerHTML = allHTML;
+});
+//boton Species
+let testButton5 = document.getElementById("testButton5");
+testButton5.addEventListener("click", (event) => {
+    let speciesOrderResults = speciesOrder(resultsData, "Robot");
+    let allHTML = ""
+    for (let i = 0; i < speciesOrderResults.length; i++) {
+        allHTML += generatorHtml(speciesOrderResults[i]);
+    }
+    allCards.innerHTML = allHTML;
+});
+
+//prueba del domingo --menu burger botton
+const menuBtn = document.querySelector(".menu-btn");
+let menuOpen = false;
+menuBtn.addEventListener("click", () => {
+    if (!menuOpen) {
+        menuBtn.classList.add("open");
+        menuOpen = true;
+    } else {
+        menuBtn.classList.remove("open");
+        menuOpen = false;
+    }
+});
+
+// prueba landingpage borrar pagina y recargarla con boton home
+
+
+let buttonInicio = document.getElementById("portalInicio")
+buttonInicio.addEventListener("click", (event) => {
+    document.getElementById("welcomePortal").innerHTML = "";
+    console.log("welcomePortal");
 })
 
-maleData.innerHTML = maleHtml;
+let buttonRegreso = document.getElementById("portalBackHome")
+buttonRegreso.addEventListener("click", (event) => {
+    location.reload();
+    console.log("portalBackHome");
 
-
-
-//*************************SEGUNDA OPCIÓN CÓDGIO***************************/
-
-//declaramos de donde obtendremos nuestra data
-
-import data from './data/rickandmorty/rickandmorty.js';
-import {alphabeticOrder} from './data.js';
-
-const resultsData = data.results;    
-const abcOrder= alphabeticOrder; 
-
-
-window.onload = function reviewData() {    // esta funcion se ejecuta en cada recarga de la pagina
-    for(let i=0;i < resultsData.length; i++){            //recorremos la data (++)
-       const cardName    = resultsData[i]["name"];            //accede a los datos especificos en el array en este caso name y los guarda en la nueva variable
-       const cardStatus    = resultsData[i].status;
-       const cardOrigin    = resultsData[i].origin.name;
-       const cardGender    = resultsData[i].gender;
-       const cardEpisode = resultsData[i].episode.length;
-       const cardImage    = resultsData[i].image;
-       const cardSpecies  = resultsData[i].species;
-       cloneData(cardName,cardStatus, cardOrigin, cardGender, cardImage, cardEpisode, cardSpecies) //ejecutamos la funcion clonar con los datos del parametro
-    }
-   document.getElementById("card").style.display="none"
-   
-  }
-
-  function cloneData(cardName,cardStatus, cardOrigin, cardGender, cardImage, cardEpisode, cardSpecies) {//Creamos esta función declarando los parametros a usar
-  
-    var container = document.getElementById("card");//reservamos un id en html
-    var clone= container.cloneNode(true);        //a contenedor le aplicamos el metodo cloneNode para clonar
-  
-    clone.style.display = "inline-block";       //aplicamos un estilo display y una margen para los nuevos div´s
-    clone.style.margin = "1em"
-
-     //variable para el contenedor de las tarjetas
-    let cardContainer =document.getElementById("cardContainer");
-    cardContainer.appendChild(clone);  
-    
-    //variables para los datos dentro de cada tarjeta
-
-    let characterName = document.getElementById("characterName");//reservamos un id en html
-    characterName.innerHTML = cardName               //imprimimos el dato requerido
-    
-    let characterStatus = document.getElementById("characterStatus");
-    characterStatus.innerHTML = "Status: "+ cardStatus
-  
-    let characterOrigin = document.getElementById("characterOrigin");
-    characterOrigin.innerHTML  = "Origin: "+ cardOrigin
-                     
-    let numberEpisodes = document.getElementById("numberEpisodes");
-    numberEpisodes.innerHTML = "Number of episodes: "+ cardEpisode
-     
-    let characterGender = document.getElementById("characterGender");
-    characterGender.innerHTML = "Gender: "+ cardGender
-  
-    let characterSpecie = document.getElementById("characterSpecie");
-    characterSpecie .innerHTML  = "Specie: "+ cardSpecies
-  
-    document.getElementById("characterImg").src = cardImage
-  }
-
-  //*******************SPECIES SECTION*******************/
+});
