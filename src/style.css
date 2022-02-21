@@ -2,6 +2,7 @@ body{
     background-color: black;
     font-family: 'Share Tech Mono', monospace;
     box-sizing: border-box;
+    color: white;
 }
 
 .logoStyle{
@@ -29,28 +30,27 @@ body{
 /*MENU*/
 .menuBackGround{
 background-image: url('./assets/fondo-menu.jpg');
+}
 
-    border-radius: 20px;
-    background-color: rgb(22, 141, 22);
-    border: rgb(138, 238, 8) 2px solid;
-    position: relative;
-}
 .about{
-    height: auto;
-    width: 200px; 
-    margin:auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    padding: auto;
-    color: white;
-   
+border-radius: 20px;
+background-color: rgb(22, 141, 22);
+border: rgb(138, 238, 8) 2px solid;
+position: relative;
+height: auto;
+width: 200px; 
+margin:auto;
+display: flex;
+flex-wrap: wrap;
+position: relative;
+padding: auto;
 }
+
 #aboutTitle{
-    height: auto;
-    width: auto; 
-    margin: 3%;
-    padding: 5%;
+height: auto;
+width: auto; 
+margin: 3%;
+padding: 5%;
 }
 
 p{
@@ -64,46 +64,31 @@ p{
 }
 
 
-#contenedorTarjetas{
+.cardContainer{/*contenedor de tarjetas*/
     margin-top: 6em;
     margin-bottom: 30em;
     padding-bottom: 10%;
-    position: relative;
-    top: 2em;
-    left:2em ;
-    display: block;
-    grid-template-columns: repeat(3,1fr);
+    display:grid;
+    position: center;
+    grid-template-columns: repeat(5,1fr); 
     flex-direction: row;
-    width: 65vw;
     height: auto;
-    gap: 0.1em;
-    margin:1%;
-    background-color: transparent;
-
-
- 
+    gap: 0.5em;
+    margin: 5px; 
 }
 
-#cardSpecies{
+.card{ 
     display:inline-flex;
     position: relative;
     flex-wrap: wrap;
-    height:380px; 
-}
-
-#tarjeta{
-    display:inline-flex;
-    position: relative;
-    flex-wrap: wrap;
-    height:300px;
-    width:200px;
+    height:400px;
+    width:220px;
     overflow: hidden;
-    margin-left:auto;
+    margin-left:40px;
     margin-right:auto;
     padding: 1% 2% 2% 1%;
     border-radius: 15px;
     border:4px solid rgb(0, 217, 255);
-    transition: all .4s ease-in-out;
     justify-content: center;
     text-align:center;
     align-items: center;
