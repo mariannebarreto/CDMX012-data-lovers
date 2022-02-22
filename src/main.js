@@ -5,55 +5,55 @@ import { alphabeticOrderBack } from "./data.js";
 import { maleOrder } from "./data.js";
 import { femaleOrder } from "./data.js";
 import { speciesOrder } from "./data.js";
-//import { Episode } from "./data.js";
 
-//let order = document.getElementById("order")
+
+//-----------------CONSTANTE para el llamado de todas las tajetas de personajes
 const resultsData = data.results;
 
 window.addEventListener('DOMContentLoaded', () => {
-    // for(let i=0;i < dataHTML.length; i++){
+   
     let allHTML = ""
     let allCards = document.getElementById("allCards")
     resultsData.forEach(character => {
         allHTML += generatorHtml(character)
     })
     allCards.innerHTML = allHTML
-    //}
+ 
 });
-///a z
-/*order.addEventListener('change',(event)=>{
-    alphabeticOrder(dataHTML)/// mandar la data aqui
-    console.log("Recibi ...",event.target.value)
-});*/
 
-/*order.addEventListener('change',(event)=>{
-    alphabeticOrderBack(dataHTML)/// mandar la data aqui
-    console.log("Recibi ...",event.target.value)
-})*/
 //pruebas del domingo se comentan lineas anteriores para que funcione el filtro A-Z, se crea un boton de prueba
+//a-z
 let allCards = document.getElementById("allCards")
 let buttonTest = document.getElementById("testButton");
-buttonTest.addEventListener("click", (event) => {
-    let alphabeticOrderResults = alphabeticOrder(resultsData);
+buttonTest.addEventListener("click", (event) => { // eslint-disable-line
+
+    let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
+
     let allHTML = ""
     resultsData.forEach(alphabeticOrderResults => {
         allHTML += generatorHtml(alphabeticOrderResults);
     })
     allCards.innerHTML = allHTML;
 });
+
+
 //boton z-a
 let testButton2 = document.getElementById("testButton2");
-testButton2.addEventListener("click", (event) => {
-    let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);
+testButton2.addEventListener("click", (event) => {// eslint-disable-line
+
+    let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
     let allHTML = ""
     resultsData.forEach(alphabeticOrderBackResults => {
         allHTML += generatorHtml(alphabeticOrderBackResults);
     })
     allCards.innerHTML = allHTML;
 });
+
+
 //boton Male
 let testButton3 = document.getElementById("testButton3");
-testButton3.addEventListener("click", (event) => {
+testButton3.addEventListener("click", (event) => {// eslint-disable-line
+
     let maleOrderResults = maleOrder(resultsData);
     let allHTML = ""
     for (let i = 0; i < maleOrderResults.length; i++) {
@@ -61,9 +61,12 @@ testButton3.addEventListener("click", (event) => {
     }
     allCards.innerHTML = allHTML;
 });
+
+
 //boton Female
 let testButton4 = document.getElementById("testButton4");
-testButton4.addEventListener("click", (event) => {
+testButton4.addEventListener("click", (event) => {// eslint-disable-line
+
     let femaleOrderResults = femaleOrder(resultsData);
     let allHTML = ""
     for (let i = 0; i < femaleOrderResults.length; i++) {
@@ -71,9 +74,12 @@ testButton4.addEventListener("click", (event) => {
     }
     allCards.innerHTML = allHTML;
 });
+
+
 //boton Species
 let testButton5 = document.getElementById("testButton5");
-testButton5.addEventListener("click", (event) => {
+testButton5.addEventListener("click", (event) => { // eslint-disable-line
+
     let speciesOrderResults = speciesOrder(resultsData, "Robot");
     let allHTML = ""
     for (let i = 0; i < speciesOrderResults.length; i++) {
@@ -81,6 +87,7 @@ testButton5.addEventListener("click", (event) => {
     }
     allCards.innerHTML = allHTML;
 });
+
 
 //prueba del domingo --menu burger botton
 const menuBtn = document.querySelector(".menu-btn");
@@ -98,15 +105,30 @@ menuBtn.addEventListener("click", () => {
 // prueba landingpage borrar pagina y recargarla con boton home
 
 
-let buttonInicio = document.getElementById("portalInicio")
-buttonInicio.addEventListener("click", (event) => {
+let buttonEnter = document.getElementById("portalEnter")
+
+buttonEnter.addEventListener("click", (event) => { // eslint-disable-line
+
     document.getElementById("welcomePortalContainer").innerHTML = "";
     console.log("welcomePortalContainer");
 })
 
-let buttonRegreso = document.getElementById("portalBackHome")
-buttonRegreso.addEventListener("click", (event) => {
+let buttonBack = document.getElementById("portalBackHome")
+buttonBack.addEventListener("click", (event) => { // eslint-disable-line
+
     location.reload();
+    
     console.log("portalBackHome");
 
 });
+
+let speciesBox= document.getElementById("speciesBox")
+speciesBox.addEventListener("change", (event) => {// eslint-disable-line
+
+    let speciesFilterResults = speciesOrder(resultsData, speciesBox.value)
+    let allHTML = " "
+       for (let i = 0; i < speciesFilterResults.length; i++){
+        allHTML += generatorHtml(speciesFilterResults[i]);
+    }
+    allCards.innerHTML = allHTML;
+ });
