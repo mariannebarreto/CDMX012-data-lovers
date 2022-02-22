@@ -100,8 +100,8 @@ menuBtn.addEventListener("click", () => {
 
 let buttonInicio = document.getElementById("portalInicio")
 buttonInicio.addEventListener("click", (event) => {
-    document.getElementById("welcomePortal").innerHTML = "";
-    console.log("welcomePortal");
+    document.getElementById("welcomePortalContainer").innerHTML = "";
+    console.log("welcomePortalContainer");
 })
 
 let buttonRegreso = document.getElementById("portalBackHome")
