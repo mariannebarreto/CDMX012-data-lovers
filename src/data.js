@@ -1,8 +1,3 @@
-/*estas funciones son de ejemplo
-
-/*export const example = () => {
-  return 'example'
-};*/
 //****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
 
 //ordenado alfabético
@@ -54,7 +49,6 @@ export const speciesOrder = (resultsData, specie) => {
       /*console.log(resultsData[i].name);
       resultsMale.push(resultsData[i]); //variable donde se guardan los resultados de male
     }
-
   }
   return resultsMale;
 }*/
@@ -67,7 +61,6 @@ export const speciesOrder = (resultsData, specie) => {
   let alive = 0;
   let dead = 0;
   let unknown = 0;
-
   data.forEach((character) => {
   switch (character.status) {
     case 'Alive':
@@ -82,5 +75,3 @@ export const speciesOrder = (resultsData, specie) => {
 });
 return [ alive, dead, unknown ]
 }*/
-
-

@@ -1,189 +1,128 @@
 body{
     background-color: black;
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
 }
-/*PORTADA DE INICIO¨*/
 
-#welcomePortal{
-    background-color: black;
+#welcomePortalContainer{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+
 }
+
 .logoStyle{
     width: 800px;
     height: 250px;
- 
+    text-align: center;
 }
+
 .portalStyle{
     width: 500px;
     height:450px;
     border-radius: 300px;
     margin:auto;
-  top: 50%;
-  left: 50%;
-  margin-top: 65px;
-  margin-left: 550px;
+    top: 50%;
+    left: 50%;
+    margin-top: 65px;
+    margin-left: 550px;
   
 }
 .captionPortal{
-    font-family: 'Share Tech Mono', monospace;
     color: rgb(94, 255, 0);
     font-size: 1cm;
+    text-align: center;
 }
 
-/*MENU*/
-.menuBackGround{
+/*PÁGINA PRINCIPAL*/
+
+.mainPage{
 background-image: url('./assets/fondo-menu.jpg');
-background-size: cover;
-height: auto;  width: auto; 
-flex-wrap: wrap;
-background-color: transparent;
-margin: 0;
-text-decoration: none;  
-box-sizing: border-box;
-font-family: 'Share Tech Mono', monospace;
+box-sizing:border-box;
+flex-flow: column;
+margin: auto;
 }
 
-.flex-container{
-display:flex;
-float: inline-end;
-justify-content: space-between;
-flex-wrap: wrap;
-}
-    
-.flex-container div{
-width: 220px;
-height: 220px;
-margin: 80%;
-padding: 50%;
-}
-    
-.flex-container img {
-margin: 10px;
-width:10%;
-}
-    
-.scaled{
-transform: scale(1,0.5);
-}
-
-aside{
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    padding: auto;
-    width: 200px;
-    margin-left: 20px;
-    border-radius: 20px;
-    background-color: rgb(22, 141, 22);
-    border: rgb(138, 238, 8) 2px solid;
-    position: relative;
-}
-.about{
-    height: auto;
-    width: 200px; 
-    margin:auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    padding: auto;
-    color: white;
-   
-}
-#aboutTitle{
-    height: auto;
-    width: auto; 
-    margin: 3%;
-    padding: 5%;
-}
-
-p{
-    margin: 3%;
-    padding: 5%;
-    height: auto;
-   justify-content: center;
-    text-align: left;
-    flex-direction: column;
-    display: flex;
+.logoStylePrincipal{
+width: 800px;
+height: 250px;
+text-align: center;
 }
 
 
-
-/*BOTONES DE PORTAL*/
-
-
-
-
-/*A TO Z----Z TO A*/
-
-.aTOzBackGround{
-background-image: url('./assets/fondo-abc.png');
-background-size:cover; 
-}
-
-/*a to z tarjetas*/
-#aTOz{
-    color: white;
-    font-family:'Share Tech Mono', monospace;
+/*ASIDE IZQUIERDA*/
+aside{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
+float: left;
+width: 27vw;
+position: relative;
 }
 
 
-#contenedorTarjetas{
+.aboutContainer{ /*******Estilos de la caja verde contenedora*****/
+box-sizing: content-box;
+border-radius: 20px;
+background-color: rgb(22, 141, 22);
+border: rgb(138, 238, 8) 2px solid;
+height: auto;
+width: 200px;
+padding: 10px;
+margin: 1em;
+}
+
+.aboutTitle{/***** título de la caja ****/
+height: auto;
+width: auto; 
+margin: 3%;
+padding: 8px;
+}
+
+.aboutContent{ /*****contenido de la caja*****/
+height: auto;
+text-align: left;
+flex-direction: column;
+display: flex;
+padding: 5px;
+}
+
+
+ .menu-btn{
+    width: 54px;
+    height: 54px;
+    background: rgb(211, 15, 15);
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 3;
+    top: 20px;
+    left: 23px;
+    transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+ }
+
+.cardContainer{/*contenedor de tarjetas*/
+    box-sizing: content-box;
     margin-top: 6em;
-    margin-bottom: 30em;
-    padding-bottom: 10%;
-    position: relative;
-    top: 2em;
-    left:2em ;
-    display: block;
-    grid-template-columns: repeat(3,1fr);
-    width: 65vw;
+    display:grid;
+    position: center;
+    grid-template-columns: repeat(4,1fr); 
+    flex-direction: row;
     height: auto;
-    gap: 0.1em;
-    margin:1%;
-    background-color: transparent;
-    /* display: none; */
- 
+    margin: 40px;
+    background-color: azure;
 }
 
-#tarjeta{
+.card{ /****estilos de las tarjetas**/
     display:inline-flex;
-    position: relative;
     flex-wrap: wrap;
-    height:300px;
-    width:200px;
+    height:400px;
+    width:220px;
     overflow: hidden;
-    margin-left:auto;
-    margin-right:auto;
-    padding: 1% 2% 2% 1%;
     border-radius: 15px;
     border:4px solid rgb(0, 217, 255);
-    transition: all .4s ease-in-out;
     justify-content: center;
     text-align:center;
     align-items: center;
+    margin-left: -8px;
     background-color: rgba(0, 0, 0, 0.397);
-}
-
-
-/*SPECIES*/
-.speciesBackGround{
-background-image: url('./assets/fondo-especies.jpg');
-background-size: cover;
-}
-
-/*WOMEN*/
-.womenBackGround{
-background-image: url('./assets/fondo-mujeres.jpg');
-background-size: cover;
-}
-
-/*MEN*/
-.menBackGround{
-background-image: url('./assets/fondo-hombres.jpg');
- background-size: cover;
-}
-
-/*EPISODES*/
-.episodesBackGround{
-    background-image: url('./assets/fondo-episodios.jpg');
-     background-size: cover;
 }
