@@ -1,4 +1,3 @@
-
 //****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
 
 //ordenado alfabético
