@@ -21,9 +21,11 @@ window.addEventListener('DOMContentLoaded', () => {
  
 });
 
-//pruebas del domingo se comentan lineas anteriores para que funcione el filtro A-Z, se crea un boton de prueba
-//a-z
+
+// CONSTANTE MADRE --------
 let allCards = document.getElementById("allCards")
+
+//-----ABC ORDEN---------
 let abcOrderLi = document.getElementById("abcOrder");
 abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
@@ -37,7 +39,7 @@ abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 });
 
 
-//boton z-a
+//------------CBA ORDEN------------
 let cbaOrderLi = document.getElementById("cbaOrder");
 cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
@@ -75,32 +77,6 @@ femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
     allCards.innerHTML = allHTML;
 });
 
-
-//boton Species
-let testButton5 = document.getElementById("testButton5");
-testButton5.addEventListener("click", (event) => { // eslint-disable-line
-
-    let speciesOrderResults = speciesOrder(resultsData, "Robot");
-    let allHTML = ""
-    for (let i = 0; i < speciesOrderResults.length; i++) {
-        allHTML += generatorHtml(speciesOrderResults[i]);
-    }
-    allCards.innerHTML = allHTML;
-});
-
-
-//prueba del domingo --menu burger botton
-const menuBtn = document.querySelector(".menu-btn");
-let menuOpen = false;
-menuBtn.addEventListener("click", () => {
-    if (!menuOpen) {
-        menuBtn.classList.add("open");
-        menuOpen = true;
-    } else {
-        menuBtn.classList.remove("open");
-        menuOpen = false;
-    }
-});
 
 // prueba landingpage borrar pagina y recargarla con boton home
 
