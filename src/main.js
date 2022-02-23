@@ -24,8 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
 //pruebas del domingo se comentan lineas anteriores para que funcione el filtro A-Z, se crea un boton de prueba
 //a-z
 let allCards = document.getElementById("allCards")
-let buttonTest = document.getElementById("testButton");
-buttonTest.addEventListener("click", (event) => { // eslint-disable-line
+let abcOrderLi = document.getElementById("abcOrder");
+abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
 
@@ -38,8 +38,8 @@ buttonTest.addEventListener("click", (event) => { // eslint-disable-line
 
 
 //boton z-a
-let testButton2 = document.getElementById("testButton2");
-testButton2.addEventListener("click", (event) => {// eslint-disable-line
+let cbaOrderLi = document.getElementById("cbaOrder");
+cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
     let allHTML = ""
@@ -51,8 +51,8 @@ testButton2.addEventListener("click", (event) => {// eslint-disable-line
 
 
 //boton Male
-let testButton3 = document.getElementById("testButton3");
-testButton3.addEventListener("click", (event) => {// eslint-disable-line
+let maleOrderLi = document.getElementById("maleOrder");
+maleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let maleOrderResults = maleOrder(resultsData);
     let allHTML = ""
@@ -64,8 +64,8 @@ testButton3.addEventListener("click", (event) => {// eslint-disable-line
 
 
 //boton Female
-let testButton4 = document.getElementById("testButton4");
-testButton4.addEventListener("click", (event) => {// eslint-disable-line
+let femaleOrderLi = document.getElementById("femaleOrder");
+femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let femaleOrderResults = femaleOrder(resultsData);
     let allHTML = ""
