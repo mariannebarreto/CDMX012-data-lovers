@@ -30,7 +30,6 @@ let abcOrderLi = document.getElementById("abcOrder");
 abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
-
     let allHTML = ""
     resultsData.forEach(alphabeticOrderResults => {
         allHTML += generatorHtml(alphabeticOrderResults);
@@ -52,7 +51,7 @@ cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 });
 
 
-//boton Male
+//----------MALE ORDER----------------
 let maleOrderLi = document.getElementById("maleOrder");
 maleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
@@ -65,7 +64,7 @@ maleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 });
 
 
-//boton Female
+//----FEMALE ORDER---------------
 let femaleOrderLi = document.getElementById("femaleOrder");
 femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
@@ -77,27 +76,7 @@ femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
     allCards.innerHTML = allHTML;
 });
 
-
-// prueba landingpage borrar pagina y recargarla con boton home
-
-
-let buttonEnter = document.getElementById("portalEnter")
-
-buttonEnter.addEventListener("click", (event) => { // eslint-disable-line
-
-    document.getElementById("welcomePortalContainer").innerHTML = "";
-    console.log("welcomePortalContainer");
-})
-
-let buttonBack = document.getElementById("portalBackHome")
-buttonBack.addEventListener("click", (event) => { // eslint-disable-line
-
-    location.reload();
-    
-    console.log("portalBackHome");
-
-});
-
+//-------------BOX DE ESPECIES-----------cambiar a menú vertical 
 let speciesBox= document.getElementById("speciesBox")
 speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
@@ -108,3 +87,42 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
     }
     allCards.innerHTML = allHTML;
  });
+
+
+//*****BOTON INGRESO PAG */
+
+function enterSite (){
+    let screenPortal = document.getElementById("welcomePortalContainer");
+    screenPortal. style.display = "none";
+    document.getElementById("mainPage").style.display= "block";
+}
+document.getElementById("portalEnter").onclick = function() {enterSite()};
+
+//*****BOTÓN DE REGRESO*****/
+function backSite(){
+    let screenMain = document.getElementById("mainPage");
+    screenMain. style.display = "none";
+    document.getElementById("welcomePortalContainer").style.display= "block";
+  }
+  
+  document.getElementById("portalBackHome").onclick = function() {backSite()};
+
+
+
+
+
+//******************OPCION 1 DE ELI PARA EL SHOW AND HIDE****/
+
+
+//***let buttonEnter = document.getElementById("portalEnter");****
+
+//**buttonEnter.addEventListener("click", (event) => { // eslint-disable-line
+
+    //**document.getElementById("welcomePortalContainer").innerHTML = "";
+    //**console.log("welcomePortalContainer");
+//**})
+
+//**let buttonBack = document.getElementById("portalBackHome")
+//**buttonBack.addEventListener("click", (event) => { // eslint-disable-line
+
+// *});

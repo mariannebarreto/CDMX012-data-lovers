@@ -30,7 +30,7 @@ border-radius: 300px;
 margin:auto;
 top: 50%;
 left: 50%;
-margin-top: 38px;
+margin-top: 50px;
 margin-left: 550px;
 }
 
@@ -45,9 +45,10 @@ margin-left: 550px;
 
 .mainPage{
 background-image: url('./assets/fondo-menu.jpg');
+background-size: contain;
 box-sizing:border-box;
 flex-flow: column;
-margin: auto;
+margin: 0px;
 }
 
 .logoStylePrincipal{
@@ -166,7 +167,7 @@ margin: 1em;
 
 .allCards{/*contenedor de tarjetas*/
 box-sizing:border-box;
-padding-bottom: 10%;
+padding-bottom: 5%;
 position: relative;
 top: 2em;
 margin:40px 300px 40px 50px;

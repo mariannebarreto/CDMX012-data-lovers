@@ -47,17 +47,3 @@ export const speciesOrder = (resultsData, specie) => {
 }
 
 
-
-
-/*export const speciesOrder = (resultsData) => {
-  const resultsSpecies = []
-  for (let i = 0; i < resultsData.length; i++) {
-    if (resultsData[i].results == "Species") {//evaluando parametro resultsdata y para indicar la posicion detro del array , gender es lo que vamos a comparar
-      /*console.log(resultsData[i].name);
-      resultsMale.push(resultsData[i]); //variable donde se guardan los resultados de male
-    }
-  }
-  return resultsMale;
-}*/
-
-
