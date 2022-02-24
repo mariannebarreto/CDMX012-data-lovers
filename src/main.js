@@ -94,7 +94,7 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
 function enterSite (){
     let screenPortal = document.getElementById("welcomePortalContainer");
-    screenPortal. style.display = "none";
+    screenPortal.style.display = "none";
     document.getElementById("mainPage").style.display= "block";
 }
 document.getElementById("portalEnter").onclick = function() {enterSite()};
@@ -106,12 +106,13 @@ function backSite(){
     document.getElementById("welcomePortalContainer").style.display= "block";
   }
   
-document.getElementById("portalBackHome").onclick = function () { backSite() };
-  
+  document.getElementById("portalBackHome").onclick = function() {backSite()};
+
+
 //***** SECCION DE TOP TEN CHART*/
 
 let top10orderLi = document.getElementById("top10order")
-top10orderLi.addEventListener("click", (event) => {
+top10orderLi.addEventListener("click", (event) => { //eslint-disable-line
     let topTenChartSeccion = relevanceOrder(resultsData);
     let namesChart = []
     let episodesChart = []
