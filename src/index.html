@@ -10,73 +10,93 @@
 
   <!---PORTADA-->
   <body>
-    <section id="welcomePortal">
+    <section id="welcomePortalContainer">
       <header style="text-align: center;"> 
         <img class= "logoStyle" src="/assets/logo.jpg" >
-      </header>
-      <figure>
-        <img class="portalStyle" src="/assets/portalCrop.gif" id="portalInicio" alt="Portal enter" width="400" height="380"
-          border-radius="270"><br><br><br>
-        <figcaption class="captionPortal" style="text-align: center">ENTER THE PORTAL AND GET SCHWIFTY!!!</figcaption>
+         </header>
+
+        <figure>
+         <img class="portalStyle" src="/assets/portalCrop.gif" id="portalEnter" alt="Portal enter"><br><br><br>
+        <figcaption class="captionPortal" >ENTER THE PORTAL AND GET SCHWIFTY!!!</figcaption>
         </figure>
 
     </section>
     
-<!---MENU la 2da pagina--> 
+<!-----------------------------PÁGINA PRINCIPAL----------------------------------------------------->
 
-<section id="menuBackGround" class="menuBackGround">
+<section id="mainPage" class="mainPage">
       <header style="text-align: center;"> 
-        <img class= "logoStyle" src="/assets/rickymorty_bleed.png" >
+        <img class= "logoStylePrincipal" src="/assets/rickymorty_bleed.png" >
+      </header>
+<!----------BARRA DE MENÚ-------------------->
 
-      <!--ASIDE DATA---->
-=======
-<!------------------------pruebas del domigo-------------------------------------->
-<div>
+<nav class="topNav">
+  <img src="/assets/mr-meeseeks-kirkland.png" alt="what do you whant?" height="110px" text-align= left>
+  <div class="menu-btn" style="left:220px"></div>
+  <ul class="filterList">
+    <li class="list" id="abcOrder" >ALPHABETIC ORDER</li>
+    <li class="list" id="cbaOrder">ALPHABETIC ORDER BACK</li>
+    <li class="list" id="maleOrder">MALE</li>
+    <li class="list" id="femaleOrder">FEMALE</li>    
+    <li class="list" id="top10order">TOP TEN </li>
+    <label>SPECIES
+      <select id="speciesBox">
+        <option value="Human">Human</option>
+        <option value="Robot">Robot</option>
+        <option value="Humanoid">Humanoid</option>
+        <option value="Alien">Alien</option>
+        <option value="Poopybutthole">Poopybutthole</option>
+        <option value="unknown">unknown</option>
+        <option value="Mytholog">Mytholog</option>
+        <option value="Vampire">Vampire</option>
+        <option value="Cronenberg">Cronenberg</option>
+        <option value="Animal">Animal</option>
+        <option value="Parasite">Parasite</option>
+        <option value="Disease">Disease</option>
+      </select>
+      </label>
+    <li class="list" id="clearAll">SHOW ME ALL</li>
+  </ul>
+  <img src="/assets/sticker_2060.png" alt="sticker Portal" id="portalBackHome" height="110px" text-align= right >
+</nav>
 
-  <img src="/assets/mr-meeseeks-kirkland.png" alt="what do you whant?" "width =200px" "align= left">
 
-</div>
-
-<!--esta seccion es separada y se ubica a la izquierda del cavas-->
-
-<div class="menu-btn">
-  <div class="menu-btn_burger"></div>"
-
-</div>
-
-<!--arriba pruebas de domingo-->
-
-<!--boton de regreso a home-->
-<img src="/assets/portalCrop.gif" alt="portal regreso a home" id="portalBackHome" "width =50px"
-
+<!---- ASIDE IZQUIERDA-------------------------------------------------->
     <aside >
-      <div class="about">
-         <h2 id="aboutTitle"> RICK & MORTY</h2>
-         <p>An American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon
+      <div class="aboutContainer">
+         <h2 class="aboutTitle"> RICK & MORTY</h2>
+         <img src="/assets/rick_and_morty_minecraft_1447.png" alt="headRickMorty" id="headRickMorty" height="90px" >
+         <p class="aboutContent">An American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon
          for Cartoon Network's nighttime Adult Swim programming block. The series follows the misadventures
          of cynical mad scientist Rick Sanchez and his good-hearted but fretful 
          grandson Morty Smith, who split their time between domestic life and interdimensional adventures.</p> 
        </div>
       </aside>
+    
 
-      <button id="testButton" type="button">ALPHABETC ORDER!!</button>
-      <button id="testButton2" type="button">ALPHABETIC BACK ORDER!!</button>
-      <button id="testButton3" type="button">MALE</button>
-      <button id="testButton4" type="button">FEMALE</button>
-      <button id="testButton5" type="button">SPECIES</button>
-      <button id="testButton6" type="button">EPISODES</button>
+<!--------------------------------------------------------------------------------------------------ASIDE DERECHA-->
+      <div class="asideRight">
+        <aside>
+          <img src="/assets/rick-and-morty-lawnmower-dog.png" alt="sticker dog" height="110px" >
+          I am the <b>aside html tag</b>. I hold the useful components of a sidebar. I usually stay the same and I can be used on different web pages.
+        </aside>
+        </div>
 
-      <!----------ALL CARDS-->
 
-      <div id="allCards" class="cardContainer"></div>
-      
-      <select name="ordenado" id="ordenado">
-        <option value="az">az</option>
-        <option value="za"></option>
-      </select>
-</section>
+<!----------------------------------TARJETAS DE DATA (MODULAR)--------------------------------------------->
+      <div id="allCards" class="allCards"></div>
+
 
     <script src="main.js" type="module"></script>
+
+
+<!--------------------------------------------------------------------------------------------------------Chart-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <div>
+      <canvas width="200" height="200" id="topTenChart"></canvas>
+    
+    </div>
+
   </body>
 </html>
 

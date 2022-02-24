@@ -5,55 +5,57 @@ import { alphabeticOrderBack } from "./data.js";
 import { maleOrder } from "./data.js";
 import { femaleOrder } from "./data.js";
 import { speciesOrder } from "./data.js";
-//import { Episode } from "./data.js";
+import { relevanceOrder } from "./data.js";
 
-//let order = document.getElementById("order")
+
+//-----------------CONSTANTE para el llamado de todas las tajetas de personajes
 const resultsData = data.results;
 
 window.addEventListener('DOMContentLoaded', () => {
-    // for(let i=0;i < dataHTML.length; i++){
+   
     let allHTML = ""
     let allCards = document.getElementById("allCards")
     resultsData.forEach(character => {
         allHTML += generatorHtml(character)
     })
     allCards.innerHTML = allHTML
-    //}
+ 
 });
-///a z
-/*order.addEventListener('change',(event)=>{
-    alphabeticOrder(dataHTML)/// mandar la data aqui
-    console.log("Recibi ...",event.target.value)
-});*/
 
-/*order.addEventListener('change',(event)=>{
-    alphabeticOrderBack(dataHTML)/// mandar la data aqui
-    console.log("Recibi ...",event.target.value)
-})*/
-//pruebas del domingo se comentan lineas anteriores para que funcione el filtro A-Z, se crea un boton de prueba
+
+// CONSTANTE MADRE --------
 let allCards = document.getElementById("allCards")
-let buttonTest = document.getElementById("testButton");
-buttonTest.addEventListener("click", (event) => {
-    let alphabeticOrderResults = alphabeticOrder(resultsData);
+
+//-----ABC ORDEN---------
+let abcOrderLi = document.getElementById("abcOrder");
+abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
+
+    let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
     let allHTML = ""
     resultsData.forEach(alphabeticOrderResults => {
         allHTML += generatorHtml(alphabeticOrderResults);
     })
     allCards.innerHTML = allHTML;
 });
-//boton z-a
-let testButton2 = document.getElementById("testButton2");
-testButton2.addEventListener("click", (event) => {
-    let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);
+
+
+//------------CBA ORDEN------------
+let cbaOrderLi = document.getElementById("cbaOrder");
+cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
+
+    let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
     let allHTML = ""
     resultsData.forEach(alphabeticOrderBackResults => {
         allHTML += generatorHtml(alphabeticOrderBackResults);
     })
     allCards.innerHTML = allHTML;
 });
-//boton Male
-let testButton3 = document.getElementById("testButton3");
-testButton3.addEventListener("click", (event) => {
+
+
+//----------MALE ORDER----------------
+let maleOrderLi = document.getElementById("maleOrder");
+maleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
+
     let maleOrderResults = maleOrder(resultsData);
     let allHTML = ""
     for (let i = 0; i < maleOrderResults.length; i++) {
@@ -61,9 +63,12 @@ testButton3.addEventListener("click", (event) => {
     }
     allCards.innerHTML = allHTML;
 });
-//boton Female
-let testButton4 = document.getElementById("testButton4");
-testButton4.addEventListener("click", (event) => {
+
+
+//----FEMALE ORDER---------------
+let femaleOrderLi = document.getElementById("femaleOrder");
+femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
+
     let femaleOrderResults = femaleOrder(resultsData);
     let allHTML = ""
     for (let i = 0; i < femaleOrderResults.length; i++) {
@@ -71,42 +76,110 @@ testButton4.addEventListener("click", (event) => {
     }
     allCards.innerHTML = allHTML;
 });
-//boton Species
-let testButton5 = document.getElementById("testButton5");
-testButton5.addEventListener("click", (event) => {
-    let speciesOrderResults = speciesOrder(resultsData, "Robot");
-    let allHTML = ""
-    for (let i = 0; i < speciesOrderResults.length; i++) {
-        allHTML += generatorHtml(speciesOrderResults[i]);
+
+//-------------BOX DE ESPECIES-----------cambiar a menú vertical 
+let speciesBox= document.getElementById("speciesBox")
+speciesBox.addEventListener("change", (event) => {// eslint-disable-line
+
+    let speciesFilterResults = speciesOrder(resultsData, speciesBox.value)
+    let allHTML = " "
+       for (let i = 0; i < speciesFilterResults.length; i++){
+        allHTML += generatorHtml(speciesFilterResults[i]);
     }
     allCards.innerHTML = allHTML;
-});
+ });
 
-//prueba del domingo --menu burger botton
-const menuBtn = document.querySelector(".menu-btn");
-let menuOpen = false;
-menuBtn.addEventListener("click", () => {
-    if (!menuOpen) {
-        menuBtn.classList.add("open");
-        menuOpen = true;
-    } else {
-        menuBtn.classList.remove("open");
-        menuOpen = false;
+
+//*****BOTON INGRESO PAG */
+
+function enterSite (){
+    let screenPortal = document.getElementById("welcomePortalContainer");
+    screenPortal. style.display = "none";
+    document.getElementById("mainPage").style.display= "block";
+}
+document.getElementById("portalEnter").onclick = function() {enterSite()};
+
+//*****BOTÓN DE REGRESO*****/
+function backSite(){
+    let screenMain = document.getElementById("mainPage");
+    screenMain. style.display = "none";
+    document.getElementById("welcomePortalContainer").style.display= "block";
+  }
+  
+document.getElementById("portalBackHome").onclick = function () { backSite() };
+  
+//***** SECCION DE TOP TEN CHART*/
+
+let top10orderLi = document.getElementById("top10order")
+top10orderLi.addEventListener("click", (event) => {
+    let topTenChartSeccion = relevanceOrder(resultsData);
+    let namesChart = []
+    let episodesChart = []
+    for (let i = 0; i < 9; i++) {
+        namesChart.push(topTenChartSeccion[i].name);
+        episodesChart.push(topTenChartSeccion[i].episode.length);
     }
-});
+    let topTenChart = document.getElementById("topTenChart")
+    const topTenChartResults = new Chart(topTenChart, {
+        type: "bar",
+        data: {
+            labels: namesChart,
+            datasets: [{
+                Label: "Episodios de aparición",
+                data: episodesChart,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
 
-// prueba landingpage borrar pagina y recargarla con boton home
+                ],
+                borderWidth: 1
+
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    begInAtZero: true
+                }
+            }
+        }
+    });
+
+    let topTenResults = relevanceOrder(resultsData);
+    let allHTML = ""
+    resultsData.forEach(topTenResults => {
+        allHTML += generatorHtml(topTenResults);
+    })
+    allCards.innerHTML = allHTML;
 
 
-let buttonInicio = document.getElementById("portalInicio")
-buttonInicio.addEventListener("click", (event) => {
-    document.getElementById("welcomePortal").innerHTML = "";
-    console.log("welcomePortal");
 })
 
-let buttonRegreso = document.getElementById("portalBackHome")
-buttonRegreso.addEventListener("click", (event) => {
-    location.reload();
-    console.log("portalBackHome");
 
-});
+
+
+
+
+//******************OPCION 1 DE ELI PARA EL SHOW AND HIDE****/
+
+
+//***let buttonEnter = document.getElementById("portalEnter");****
+
+//**buttonEnter.addEventListener("click", (event) => { // eslint-disable-line
+
+    //**document.getElementById("welcomePortalContainer").innerHTML = "";
+    //**console.log("welcomePortalContainer");
+//**})
+
+//**let buttonBack = document.getElementById("portalBackHome")
+//**buttonBack.addEventListener("click", (event) => { // eslint-disable-line
+
+// *});
