@@ -5,6 +5,7 @@ import { alphabeticOrderBack } from "./data.js";
 import { maleOrder } from "./data.js";
 import { femaleOrder } from "./data.js";
 import { speciesOrder } from "./data.js";
+import { relevanceOrder } from "./data.js";
 
 
 //-----------------CONSTANTE para el llamado de todas las tajetas de personajes
@@ -105,7 +106,63 @@ function backSite(){
     document.getElementById("welcomePortalContainer").style.display= "block";
   }
   
-  document.getElementById("portalBackHome").onclick = function() {backSite()};
+document.getElementById("portalBackHome").onclick = function () { backSite() };
+  
+//***** SECCION DE TOP TEN CHART*/
+
+let top10orderLi = document.getElementById("top10order")
+top10orderLi.addEventListener("click", (event) => {
+    let topTenChartSeccion = relevanceOrder(resultsData);
+    let namesChart = []
+    let episodesChart = []
+    for (let i = 0; i < 9; i++) {
+        namesChart.push(topTenChartSeccion[i].name);
+        episodesChart.push(topTenChartSeccion[i].episode.length);
+    }
+    let topTenChart = document.getElementById("topTenChart")
+    const topTenChartResults = new Chart(topTenChart, {
+        type: "bar",
+        data: {
+            labels: namesChart,
+            datasets: [{
+                Label: "Episodios de aparición",
+                data: episodesChart,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+
+                ],
+                borderWidth: 1
+
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    begInAtZero: true
+                }
+            }
+        }
+    });
+
+    let topTenResults = relevanceOrder(resultsData);
+    let allHTML = ""
+    resultsData.forEach(topTenResults => {
+        allHTML += generatorHtml(topTenResults);
+    })
+    allCards.innerHTML = allHTML;
+
+
+})
+
 
 
 
