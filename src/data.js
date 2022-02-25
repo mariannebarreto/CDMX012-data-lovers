@@ -1,9 +1,18 @@
 //****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
 
 //ordenado alfabético
-export const alphabeticOrder = (resultsData) => resultsData.sort((character1, character2) => {
+/*export const alphabeticOrder = (resultsData) => resultsData.sort((character1, character2) => {
   return (character1.name < character2.name) ? -1 : 1; //algoritmo de ordenamiento
-});
+});*/
+export const alphabeticOrder = (resultsData) => {
+  let testArray = [];//declaro un array vacio
+  for (let i = 0; i < resultsData.length; i++) {// recorro cadena de array
+    testArray.push(resultsData[i]);//se declara un nuevo array para que se pueda pasar todos los datos y pueda encuentrar sort es funcion de la clase array pero resultData es un argumento y sort no aplica ahi
+  }
+  return testArray.sort((character1, character2) => {
+    return (character1.name < character2.name) ? -1 : 1; //algoritmo de ordenamiento
+  });
+};
 
 
 //ordenado alfabético de regreso

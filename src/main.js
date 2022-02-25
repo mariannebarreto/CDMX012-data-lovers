@@ -111,7 +111,7 @@ document.getElementById("portalBackHome").onclick = function () { backSite() };
 //***** SECCION DE TOP TEN CHART*/
 
 let top10orderLi = document.getElementById("top10order")
-top10orderLi.addEventListener("click", (event) => {
+top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
     let topTenChartSeccion = relevanceOrder(resultsData);
     let namesChart = []
     let episodesChart = []
@@ -120,7 +120,7 @@ top10orderLi.addEventListener("click", (event) => {
         episodesChart.push(topTenChartSeccion[i].episode.length);
     }
     let topTenChart = document.getElementById("topTenChart")
-    const topTenChartResults = new Chart(topTenChart, {
+    const topTenChartResults = new Chart(topTenChart, { // eslint-disable-line
         type: "bar",
         data: {
             labels: namesChart,
@@ -153,7 +153,7 @@ top10orderLi.addEventListener("click", (event) => {
         }
     });
 
-    let topTenResults = relevanceOrder(resultsData);
+    let topTenResults = relevanceOrder(resultsData); // eslint-disable-line
     let allHTML = ""
     resultsData.forEach(topTenResults => {
         allHTML += generatorHtml(topTenResults);
