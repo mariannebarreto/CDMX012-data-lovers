@@ -46,4 +46,26 @@ export const speciesOrder = (resultsData, specie) => {
   return resultsSpecies;
 }
 
+//Cálculo del top 10 personajes que salen en la serie
 
+export const relevanceOrder = (resultsData) => resultsData.sort((character1, character2) => {
+  return (character2.episode.length - character1.episode.length);// de mayor a menor top ten
+});
+
+
+// Cálculo género de personajes
+
+export const statusCh= (resultsData) => {
+  let maleCh= 0;
+  let femaleCh= 0;
+ 
+  resultsData.forEach((character) => {switch (character.gender) {
+      case 'Male':
+        maleCh += 1;
+      break;
+    case 'Female':
+        femaleCh += 1;
+  }
+  });
+  return [ maleCh,femaleCh]
+}
