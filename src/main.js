@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
  
 });
 
-
 // CONSTANTE MADRE --------
 let allCards = document.getElementById("allCards")
 
@@ -31,10 +30,11 @@ let abcOrderLi = document.getElementById("abcOrder");
 abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
-    let allHTML = ""
-    resultsData.forEach(alphabeticOrderResults => {
-        allHTML += generatorHtml(alphabeticOrderResults);
-    })
+    let allHTML = "";
+    for (let i = 0; i < alphabeticOrderResults.length; i++){
+        allHTML += generatorHtml(alphabeticOrderResults[i]);
+    }
+        
     allCards.innerHTML = allHTML;
 });
 
@@ -44,10 +44,11 @@ let cbaOrderLi = document.getElementById("cbaOrder");
 cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
-    let allHTML = ""
-    resultsData.forEach(alphabeticOrderBackResults => {
-        allHTML += generatorHtml(alphabeticOrderBackResults);
-    })
+    let allHTML = "";
+    for (let i = 0; i <alphabeticOrderBackResults.length; i++) {
+        allHTML += generatorHtml(alphabeticOrderBackResults[i]);
+    }
+
     allCards.innerHTML = allHTML;
 });
 
