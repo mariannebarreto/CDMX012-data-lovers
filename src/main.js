@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
  
 });
 
-
 // CONSTANTE MADRE --------
 let allCards = document.getElementById("allCards")
 
@@ -31,10 +30,11 @@ let abcOrderLi = document.getElementById("abcOrder");
 abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
-    let allHTML = ""
-    resultsData.forEach(alphabeticOrderResults => {
-        allHTML += generatorHtml(alphabeticOrderResults);
-    })
+    let allHTML = "";
+    for (let i = 0; i < alphabeticOrderResults.length; i++){
+        allHTML += generatorHtml(alphabeticOrderResults[i]);
+    }
+        
     allCards.innerHTML = allHTML;
 });
 
@@ -44,10 +44,11 @@ let cbaOrderLi = document.getElementById("cbaOrder");
 cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
-    let allHTML = ""
-    resultsData.forEach(alphabeticOrderBackResults => {
-        allHTML += generatorHtml(alphabeticOrderBackResults);
-    })
+    let allHTML = "";
+    for (let i = 0; i <alphabeticOrderBackResults.length; i++) {
+        allHTML += generatorHtml(alphabeticOrderBackResults[i]);
+    }
+
     allCards.innerHTML = allHTML;
 });
 
@@ -94,7 +95,7 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
 function enterSite (){
     let screenPortal = document.getElementById("welcomePortalContainer");
-    screenPortal.style.display = "none";
+    screenPortal. style.display = "none";
     document.getElementById("mainPage").style.display= "block";
 }
 document.getElementById("portalEnter").onclick = function() {enterSite()};
@@ -106,13 +107,12 @@ function backSite(){
     document.getElementById("welcomePortalContainer").style.display= "block";
   }
   
-  document.getElementById("portalBackHome").onclick = function() {backSite()};
-
-
+document.getElementById("portalBackHome").onclick = function () { backSite() };
+  
 //***** SECCION DE TOP TEN CHART*/
 
 let top10orderLi = document.getElementById("top10order")
-top10orderLi.addEventListener("click", (event) => { //eslint-disable-line
+top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
     let topTenChartSeccion = relevanceOrder(resultsData);
     let namesChart = []
     let episodesChart = []
@@ -121,7 +121,7 @@ top10orderLi.addEventListener("click", (event) => { //eslint-disable-line
         episodesChart.push(topTenChartSeccion[i].episode.length);
     }
     let topTenChart = document.getElementById("topTenChart")
-    const topTenChartResults = new Chart(topTenChart, {
+    const topTenChartResults = new Chart(topTenChart, { // eslint-disable-line
         type: "bar",
         data: {
             labels: namesChart,
@@ -154,7 +154,7 @@ top10orderLi.addEventListener("click", (event) => { //eslint-disable-line
         }
     });
 
-    let topTenResults = relevanceOrder(resultsData);
+    let topTenResults = relevanceOrder(resultsData); // eslint-disable-line
     let allHTML = ""
     resultsData.forEach(topTenResults => {
         allHTML += generatorHtml(topTenResults);
