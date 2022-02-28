@@ -60,4 +60,3 @@ export const relevanceOrder = (resultsData) => resultsData.sort((character1, cha
 });
 
 
-

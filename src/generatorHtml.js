@@ -14,8 +14,3 @@ export default function generatorHtml(aCharacter){
  </div>`
 }
 
-/***** ver cómo generar la función del menú****
- 
-export function menuNav(){.......
- return ..........
-}*/
