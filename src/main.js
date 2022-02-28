@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
  
 });
 
-
 // CONSTANTE MADRE --------
 let allCards = document.getElementById("allCards")
 
@@ -31,10 +30,11 @@ let abcOrderLi = document.getElementById("abcOrder");
 abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
-    let allHTML = ""
-    resultsData.forEach(alphabeticOrderResults => {
-        allHTML += generatorHtml(alphabeticOrderResults);
-    })
+    let allHTML = "";
+    for (let i = 0; i < alphabeticOrderResults.length; i++){
+        allHTML += generatorHtml(alphabeticOrderResults[i]);
+    }
+        
     allCards.innerHTML = allHTML;
 });
 
@@ -44,10 +44,11 @@ let cbaOrderLi = document.getElementById("cbaOrder");
 cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
-    let allHTML = ""
-    resultsData.forEach(alphabeticOrderBackResults => {
-        allHTML += generatorHtml(alphabeticOrderBackResults);
-    })
+    let allHTML = "";
+    for (let i = 0; i <alphabeticOrderBackResults.length; i++) {
+        allHTML += generatorHtml(alphabeticOrderBackResults[i]);
+    }
+
     allCards.innerHTML = allHTML;
 });
 
@@ -94,7 +95,7 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
 function enterSite (){
     let screenPortal = document.getElementById("welcomePortalContainer");
-    screenPortal.style.display = "none";
+    screenPortal. style.display = "none";
     document.getElementById("mainPage").style.display= "block";
 }
 document.getElementById("portalEnter").onclick = function() {enterSite()};
@@ -106,109 +107,62 @@ function backSite(){
     document.getElementById("welcomePortalContainer").style.display= "block";
   }
   
-  document.getElementById("portalBackHome").onclick = function() {backSite()};
-
-  //****BOTÓN COMPUTE DOG****/
-
- 
-  //***** SECCION DE CÁLCULOS***//
-
-  const genderAll= resultsData.map(item => item.name);
-  let genderResults = genderAll.length;
-
-const allFemale = resultsData.filter(function(element){
-  return element.gender === "Female";
-}); 
-
-let femaleTotal = allFemale.length
-let femalePercent = 100 * femaleTotal / genderResults;
-document.getElementById("computeFemale").innerHTML = `Did you know that ${parseInt(femalePercent)}% of the characters are female?`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById("portalBackHome").onclick = function () { backSite() };
   
-  let top10orderLi = document.getElementById("top10order")
-  top10orderLi.addEventListener("click", (event) => {//eslint-disable-line
-      let topTenChartSection = relevanceOrder(resultsData);
-      let namesChart = []
-      let episodesChart = []
-      for (let i = 0; i < 9; i++) {
-          namesChart.push(topTenChartSection[i].name);
-          episodesChart.push(topTenChartSection[i].episode.length);
-      }
-      let topTenChart = document.getElementById("topTenChart")
-      const topTenChartResults = new Chart(topTenChart, {
-          type: "bar",
-          data: {
-              labels: namesChart,
-              datasets: [{
-                  Label: "Episodios de aparición",
-                  data: episodesChart,
-                  backgroundColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)',
-  
-                  ],
-                  borderWidth: 1
-  
-              }]
-          },
-          options: {
-              scales: {
-                  y: {
-                      begInAtZero: true
-                  }
-              }
-          }
-      });
-  
-      let topTenResults = relevanceOrder(resultsData);
-      let allHTML = ""
-      resultsData.forEach(topTenResults => {
-          allHTML += generatorHtml(topTenResults);
-      })
-      allCards.innerHTML = allHTML;
-  
-  
-  })
-  
+//***** SECCION DE TOP TEN CHART*/
+
+let top10orderLi = document.getElementById("top10order")
+top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
+    let topTenChartSeccion = relevanceOrder(resultsData);
+    let namesChart = []
+    let episodesChart = []
+    for (let i = 0; i < 9; i++) {
+        namesChart.push(topTenChartSeccion[i].name);
+        episodesChart.push(topTenChartSeccion[i].episode.length);
+    }
+    let topTenChart = document.getElementById("topTenChart")
+    const topTenChartResults = new Chart(topTenChart, { // eslint-disable-line
+        type: "bar",
+        data: {
+            labels: namesChart,
+            datasets: [{
+                Label: "Episodios de aparición",
+                data: episodesChart,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+
+                ],
+                borderWidth: 1
+
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    begInAtZero: true
+                }
+            }
+        }
+    });
+
+    let topTenResults = relevanceOrder(resultsData); // eslint-disable-line
+    let allHTML = ""
+    resultsData.forEach(topTenResults => {
+        allHTML += generatorHtml(topTenResults);
+    })
+    allCards.innerHTML = allHTML;
 
 
-
-
-
-
-
-
-
-
-
-
+})
 
 
 
