@@ -414,6 +414,8 @@ describe('relevanceOrder', () => {
     it("return array from episode relevance apparition Order", () => {
       expect(relevanceOrder(dataInicial.results)).toEqual(dataTop10.results);
     });
-  });
+});
+  
+
 
  
