@@ -51,7 +51,9 @@ export const speciesOrder = (resultsData, specie) => {
   return resultsSpecies;
 }
 
+
 //Cálculo del top 10 personajes que salen en la serie
+
 
 export const relevanceOrder = (resultsData) => resultsData.sort((character1, character2) => {
   return (character2.episode.length - character1.episode.length);// de mayor a menor top ten
@@ -78,7 +80,7 @@ export const statusCh= (resultsData) => {
 //************************ejemplo test unitarios********************//
 
 import { it } from 'eslint/lib/rule-tester/rule-tester';
-import { alphabeticOrder, alphabeticOrderBack, maleOrder, femaleOrder, speciesOrder, relevanceOrder } from '../src/data.js';
+import {alphabeticOrder, alphabeticOrderBack, maleOrder, femaleOrder, speciesOrder, relevanceOrder } from '../src/data.js';
 
 let data1 = {
   "results": [

@@ -94,7 +94,7 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
 function enterSite (){
     let screenPortal = document.getElementById("welcomePortalContainer");
-    screenPortal. style.display = "none";
+    screenPortal.style.display = "none";
     document.getElementById("mainPage").style.display= "block";
 }
 document.getElementById("portalEnter").onclick = function() {enterSite()};
@@ -107,7 +107,6 @@ function backSite(){
   }
   
   document.getElementById("portalBackHome").onclick = function() {backSite()};
-
 
   //****BOTÓN COMPUTE DOG****/
 
@@ -198,8 +197,6 @@ document.getElementById("computeFemale").innerHTML = `Did you know that ${parseI
   
   })
   
-
-
 
 
 
