@@ -108,6 +108,21 @@ function backSite(){
   }
   
 document.getElementById("portalBackHome").onclick = function () { backSite() };
+
+ //***** SECCION DE CÁLCULOS***//
+
+ const genderAll= resultsData.map(item => item.name);
+ let genderResults = genderAll.length;
+
+const allFemale = resultsData.filter(function(element){
+ return element.gender === "Female";
+}); 
+
+let femaleTotal = allFemale.length
+let femalePercent = 100 * femaleTotal / genderResults;
+document.getElementById("computeFemale").innerHTML = `Did you know that ${parseInt(femalePercent)}% of the characters are female?`;
+
+
   
 //***** SECCION DE TOP TEN CHART*/
 
@@ -164,23 +179,3 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
 
 })
 
-
-
-
-
-
-//******************OPCION 1 DE ELI PARA EL SHOW AND HIDE****/
-
-
-//***let buttonEnter = document.getElementById("portalEnter");****
-
-//**buttonEnter.addEventListener("click", (event) => { // eslint-disable-line
-
-    //**document.getElementById("welcomePortalContainer").innerHTML = "";
-    //**console.log("welcomePortalContainer");
-//**})
-
-//**let buttonBack = document.getElementById("portalBackHome")
-//**buttonBack.addEventListener("click", (event) => { // eslint-disable-line
-
-// *});

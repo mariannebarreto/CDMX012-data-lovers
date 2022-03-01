@@ -34,7 +34,6 @@ margin-left: 630px;
 }
 
 .captionPortal{
-    font-family: 'Share Tech Mono', monospace;
     color: rgb(94, 255, 0);
     font-size: 1cm;
     text-align: center;
@@ -44,8 +43,8 @@ margin-left: 630px;
 
 .mainPage{
 background-image: url('./assets/fondo-menu.jpg');
-background-size: contain;
-box-sizing:border-box;
+background-size: contain; 
+box-sizing:content-box;
 flex-flow: column;
 margin: 0px;
 }
@@ -107,7 +106,9 @@ border-radius: 5px;
 aside{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
 float: left;
 width: 27vw;
-position: relative;
+position:relative;
+display: flex;
+flex-direction: column;
 }
 
 
