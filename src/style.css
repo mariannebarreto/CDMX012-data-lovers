@@ -44,16 +44,27 @@ left: 35%;
 
 /*media queries welcome portal*/
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:480px) {
     #welcomePortalContainer{
-    display: flex;
     margin: auto;
+    align-content: center;
     }
     }
 
-    @media screen and (max-width:900px) {
+
+@media screen and (max-width: 480px){
+    .logoStyle {
+        display: flex;
+        margin: auto;  
+        width:100%;
+        height: auto;
+    }
+    }
+
+
+    @media screen and (max-width:480px) {
        .portalStyle{
-      left: 18%;
+      left: -11%;
       transform: scale(0.8);
         }
         }
@@ -75,45 +86,67 @@ height: 250px;
 text-align: center;
 }
 
-
-@media screen and (max-width: 900px){
-.mainPage {
-    flex-wrap: wrap;
-    position: relative;
-    width: auto;
-    overflow: hidden;
+/*media main page, logo, contenedores aside :C */
+@media screen and (max-width: 800px){
+#mainPage {
+        flex-direction:column;
+        width: auto;
+        overflow: hidden;
+        display:flex;
+        justify-content: center;
+    }
 }
-}
 
-@media screen and (max-width: 900px){
+
+@media screen and (max-width: 480px){
     .logoStylePrincipal {
         display: flex;
         margin: auto;
-        transform: scale(0.8);
+        transform: scale(0.8);  
+        width:80%;
+        height: auto;
 }
 }
 
-@media screen and (max-width: 808px){
-#aboutContainer{
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+@media screen and (max-width: 480px){
+    #aboutContainer {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin:7px;
+        margin-left: 1px;
 }
 }
 
 
-@media screen and (max-width: 808px){
-#allCards {
-    background-color: transparent;
-    margin-left: auto;
-    position: relative;
-    height: auto;
-    width: 35%;
-    padding: 0%;
+@media screen and (max-width: 480px){
+    #headRickMorty{
+        width:50%;
+        height:auto;
+        align-items: center;
 }
 }
+
+@media screen and (max-width: 480px){
+    #asideRightCompute {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin:7px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .allCards {
+        background-color:aliceblue;
+        flex-direction: column;
+        display: table-column;
+        align-items: center;
+        margin-left: 28%;      
+}
+}
+
 /***BARRA DE MENU******/
 
 .topNav{
@@ -161,15 +194,18 @@ border-radius: 5px;
 
 
 /*ASIDE IZQUIERDA*/
-#aboutContainer{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
+.aboutStyle{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
 float: left;
 width: 200px;
+position: relative;
+display: flex;
 flex-direction: column;
 background-color: rgba(11, 168, 50, 0.37);
 border: 2px solid rgba(155, 236, 88, 0.89);
 border-radius: 20px;
 margin: 10px;
 padding: 5px;
+text-align: center;
 }
 
 .aboutTitle{/***** título de la caja ****/
@@ -188,7 +224,7 @@ padding-left: 4px;
 
  /******ASIDE DERECHA******/
 
- #asideRightCompute{
+ .asideRightCompute{
 float: right;
 width: 200px;
 flex-direction: column;
@@ -205,13 +241,14 @@ height: 110px;
 }
  /***CONTENEDOR DE TARJETAS Y TARJETAS***/
 
+
 #allCards{/*contenedor de tarjetas*/
 padding-bottom: 5%;
 margin-top: 20px;
 margin-left: 20px;
 display:grid;
 grid-template-columns: repeat(3,7cm); 
-flex-direction: row;
+flex-direction: column;
 align-content: stretch;
 height: auto;
 gap: 0.9cm;
