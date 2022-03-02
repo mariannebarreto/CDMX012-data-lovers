@@ -115,6 +115,7 @@ text-align: center;
         flex-direction: column;
         margin:7px;
         margin-left: 1px;
+        margin-top: 20px;
 }
 }
 
@@ -134,18 +135,26 @@ text-align: center;
         flex-direction: column;
         margin:7px;
         margin-right: 5px;
-    }
+}
 }
 
+@media screen and (max-width: 480px) {
+    #allCards{
+        align-items: center;
+        margin-left: 18%;
+}   
+}
 /***BARRA DE MENU******/
 
 .topNav{
-height: 110px;
-width:100;
 background-color: rgba(11, 168, 50, 0.37);
 border: 4px solid rgba(155, 236, 88, 0.89);
 border-radius: 20px;
 display: flex;
+flex-direction: row;
+align-items: center;
+width: 99%;
+height: 110px;
 z-index: 100;
 top: 0em;
 left: 0%;
@@ -153,17 +162,75 @@ position: relative;
 }
 
 .filterList{
-padding-bottom: 3%;
-position: relative;
-top: 0em;
-width: 109vw;
-display: flex;
-height: 80px;
-list-style: none;
-font-size: 25px;
-justify-content: space-around;
-align-items: baseline;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 20px;
+    height:auto;
 }
+
+@media screen and (max-width: 480px) {
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 50vw;
+    height: 10vh;
+    top: 2.5em;
+    margin: 0%;
+}
+}
+@media screen and (max-width: 480px) {
+.topNav {
+        position:relative;
+        width: 30%;
+        margin-left: 2%;
+        background-color: #010806ed;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px){
+.filterList {
+        display: block;
+        position: relative;
+        width: auto;
+        height: 60vh;
+        text-align: center;
+        align-items: left;
+        padding-left: 30%;
+        margin-left: 2%;
+    }
+}
+@media screen and (max-width: 480px){
+.list {
+    height: 8vh;
+    width: 50vw;
+    padding: 1em;
+    padding-left: 0%;
+    margin-left: 0%;
+}
+}
+
+@media screen and (max-width: 480px){
+    .speciesNav{
+        height: 8vh;
+        width: 50vw;
+        padding: 1em;
+        padding-left: 30%;
+        margin-left: 2%;
+    }
+    }
+    
+    
+
+
+
+
 
 .list{
 text-align: center;
@@ -194,6 +261,7 @@ background-color: rgba(11, 168, 50, 0.37);
 border: 2px solid rgba(155, 236, 88, 0.89);
 border-radius: 20px;
 margin: 10px;
+margin-top: 20px;
 padding: 5px;
 text-align: center;
 }
@@ -222,6 +290,7 @@ background-color: rgba(11, 168, 50, 0.37);
 border: 2px solid rgba(155, 236, 88, 0.89);
 border-radius: 20px;
 margin: 10px;
+margin-top: 20px;
 padding: 5px;
 text-align: center;
 }
@@ -233,15 +302,14 @@ height: 110px;
 
 
 #allCards{/*contenedor de tarjetas*/
-padding-bottom: 5%;
+padding: 1em;
 margin-top: 20px;
-margin-left: 20px;
 display:grid;
 grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 flex-direction: column;
 align-content: stretch;
 height: auto;
-gap: 0.9cm;
+text-align: center;
 justify-content: center;
 }
  
@@ -255,6 +323,6 @@ border-radius: 15px;
 border:4px solid rgb(0, 217, 255);
 justify-content: center;
 text-align:center;
-margin-left: -8px;
+margin-top: 12px;
 background-color: rgba(2, 55, 85, 0.377);
 }

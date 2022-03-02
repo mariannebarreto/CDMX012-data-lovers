@@ -5,6 +5,7 @@ import { alphabeticOrderBack } from "./data.js";
 import { maleOrder } from "./data.js";
 import { femaleOrder } from "./data.js";
 import { speciesOrder } from "./data.js";
+import {genderCh} from "./data.js";
 import { relevanceOrder } from "./data.js";
 
 

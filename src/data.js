@@ -50,7 +50,22 @@ export const speciesOrder = (resultsData, specie) => {
 
 
 
+// Cálculo género de personajes
 
+export const genderCh= (resultsData) => {
+  let maleCh= 0;
+  let femaleCh= 0;
+
+  resultsData.forEach((character) => {switch (character.gender) {
+      case 'Male':
+        maleCh += 1;
+      break;
+    case 'Female':
+        femaleCh += 1;
+  }
+  });
+  return [ maleCh,femaleCh]
+} 
 
 
 
