@@ -5,8 +5,9 @@ import { alphabeticOrderBack } from "./data.js";
 import { maleOrder } from "./data.js";
 import { femaleOrder } from "./data.js";
 import { speciesOrder } from "./data.js";
-import {genderCh} from "./data.js";
 import { relevanceOrder } from "./data.js";
+import { computeFemale } from './data.js';
+
 
 
 //-----------------CONSTANTE para el llamado de todas las tajetas de personajes
@@ -32,12 +33,12 @@ abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
     let allHTML = "";
-    for (let i = 0; i < alphabeticOrderResults.length; i++){
+    for (let i = 0; i < alphabeticOrderResults.length; i++) {
         allHTML += generatorHtml(alphabeticOrderResults[i]);
     }
-        
     allCards.innerHTML = allHTML;
 });
+
 
 
 //------------CBA ORDEN------------
@@ -80,12 +81,12 @@ femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 });
 
 //-------------BOX DE ESPECIES-----------cambiar a menú vertical 
-let speciesBox= document.getElementById("speciesBox")
+let speciesBox = document.getElementById("speciesBox")
 speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
     let speciesFilterResults = speciesOrder(resultsData, speciesBox.value)
     let allHTML = " "
-       for (let i = 0; i < speciesFilterResults.length; i++){
+       for (let i = 0; i < speciesFilterResults.length; i++) {
         allHTML += generatorHtml(speciesFilterResults[i]);
     }
     allCards.innerHTML = allHTML;
@@ -94,10 +95,10 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
 //*****BOTON INGRESO PAG */
 
-function enterSite (){
+function enterSite () {
     let screenPortal = document.getElementById("welcomePortalContainer");
     screenPortal. style.display = "none";
-    document.getElementById("mainPage").style.display= "block";
+    document.getElementById("mainPage").style.display = "block";
 }
 document.getElementById("portalEnter").onclick = function() {enterSite()};
 
@@ -110,18 +111,21 @@ function backSite(){
   
 document.getElementById("portalBackHome").onclick = function () { backSite() };
 
+
  //***** SECCION DE CÁLCULOS***//
 
- const genderAll= resultsData.map(item => item.name);
- let genderResults = genderAll.length;
+/*const genderAll = resultsData.map(item => item.name);
+let genderResults = genderAll.length;
+const allFemale = resultsData.filter(function (element) {
+    return element.gender === "Female";
+});*/
 
-const allFemale = resultsData.filter(function(element){
- return element.gender === "Female";
-}); 
-
-let femaleTotal = allFemale.length
-let femalePercent = 100 * femaleTotal / genderResults;
+/*let femaleTotal = allFemale.length
+let femalePercent = 100 * femaleTotal / genderResults;*/
+let femalePercent = computeFemale(resultsData);
 document.getElementById("computeFemale").innerHTML = `Did you know that ${parseInt(femalePercent)}% of the characters are female?`;
+
+
 
 
   

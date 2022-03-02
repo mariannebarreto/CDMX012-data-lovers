@@ -151,6 +151,7 @@ background-color: rgba(11, 168, 50, 0.37);
 border: 4px solid rgba(155, 236, 88, 0.89);
 border-radius: 20px;
 display: flex;
+overflow: hidden;
 flex-direction: row;
 align-items: center;
 width: 99%;
@@ -217,12 +218,9 @@ nav {
 }
 
 @media screen and (max-width: 480px){
-    .speciesNav{
-        height: 8vh;
-        width: 50vw;
-        padding: 1em;
-        padding-left: 30%;
-        margin-left: 2%;
+    .speciesLabel {
+        
+
     }
     }
     
