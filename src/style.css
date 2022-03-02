@@ -87,12 +87,12 @@ text-align: center;
 }
 
 /*media main page, logo, contenedores aside :C */
-@media screen and (max-width: 800px){
-#mainPage {
+@media screen and (max-width: 700px){
+.mainPage {
+    display:flex;
         flex-direction:column;
         width: auto;
         overflow: hidden;
-        display:flex;
         justify-content: center;
     }
 }
@@ -135,16 +135,6 @@ text-align: center;
         margin:7px;
         margin-right: 5px;
     }
-}
-
-@media screen and (max-width: 480px){
-    .allCards {
-        background-color:aliceblue;
-        flex-direction: column;
-        display: table-column;
-        align-items: center;
-        margin-left: 28%;      
-}
 }
 
 /***BARRA DE MENU******/
@@ -247,7 +237,7 @@ padding-bottom: 5%;
 margin-top: 20px;
 margin-left: 20px;
 display:grid;
-grid-template-columns: repeat(3,7cm); 
+grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 flex-direction: column;
 align-content: stretch;
 height: auto;
