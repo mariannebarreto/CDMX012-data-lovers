@@ -1,4 +1,8 @@
 //****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
+
+
+
+
 //ordenado alfabético 
 export const alphabeticOrder = (resultsData) => {
   return [].slice.call(resultsData).sort((character1, character2) => {
@@ -68,5 +72,6 @@ export const computeFemale = (resultsData) => {
 };*/
 export const relevanceOrder = (resultsData) => resultsData.sort((character1, character2) => {
   return (character2.episode.length - character1.episode.length);// de mayor a menor top ten
-});
+})
+
 
