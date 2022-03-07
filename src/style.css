@@ -261,6 +261,59 @@ border-radius: 5px;
 transition:0.2s;
 }
 
+/*BOX DE ESPECIES*/
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-apperance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow:none;
+    border: 0!important;
+    width: 20px;
+    border: 2px solid rgba(168, 11, 108, 0.37);
+    flex: 0.4;
+    padding: 0 10px;
+    color:white;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    background-color: rgba(11, 168, 50, 0.37);
+    border: 2px solid rgba(155, 236, 88, 0.89);
+    text-align: center;
+}
+select::-ms-expand {
+    display: none;
+    background-color: rgba(11, 168, 50, 0.37);
+}
+
+.select::after{
+    content:'\25BC' ;
+    position: absolute;
+    top: 0;
+    right:0;
+    padding: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+
+}
+.select::hover::after{
+ color: solid rgb(44, 12, 224);
+
+
+}
+
+@media screen and (max-width: 480px){
+.select {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    margin:7px;
+    margin-right: 5px;
+}
+}
+
+
 
 /*ASIDE IZQUIERDA*/
 .aboutStyle{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
@@ -356,6 +409,6 @@ cursor:pointer;
 
 .card:hover {
     background:rgba(9, 178, 207, 0.507);
-    border-radius: 80px; 
-    transition:0.2s;
+    border-radius: 50px; 
+    transition:0.3s;
     }
