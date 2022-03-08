@@ -80,11 +80,33 @@ flex-flow: column;
 margin: 0px;
 }
 
+@media screen and (max-width: 700px){
+    .mainPage {
+        display:flex;
+            flex-direction:column;
+            width: auto;
+            overflow: hidden;
+            justify-content: center;
+        }
+    }
+    
+
 .logoStylePrincipal{
 width: 800px;
 height: 250px;
 text-align: center;
 }
+
+@media screen and (max-width: 480px){
+    .logoStylePrincipal {
+        display: flex;
+        margin: auto;
+        transform: scale(0.8);  
+        width:80%;
+        height: auto;
+}
+}
+
 
 #myBtn{
     display:none;
@@ -110,65 +132,7 @@ text-align: center;
      border-radius: 20px;
  }
 
-/*media main page, logo, contenedores aside :C */
-@media screen and (max-width: 700px){
-.mainPage {
-    display:flex;
-        flex-direction:column;
-        width: auto;
-        overflow: hidden;
-        justify-content: center;
-    }
-}
 
-
-@media screen and (max-width: 480px){
-    .logoStylePrincipal {
-        display: flex;
-        margin: auto;
-        transform: scale(0.8);  
-        width:80%;
-        height: auto;
-}
-}
-
-@media screen and (max-width: 480px){
-    #aboutContainer {
-        width: 95%;
-        height: auto;
-        flex-direction: column;
-        margin:7px;
-        margin-left: 1px;
-        margin-top: 20px;
-}
-}
-
-
-@media screen and (max-width: 480px){
-    #headRickMorty{
-        width:50%;
-        height:auto;
-        align-items: center;
-}
-}
-
-@media screen and (max-width: 480px){
-    #asideRightCompute {
-        width: 95%;
-        height: auto;
-        flex-direction: column;
-        margin:7px;
-        margin-right: 5px;
-}
-}
-
-
-@media screen and (max-width: 480px) {
-    #allCards{
-        align-items: center;
-        margin-left: 18%;
-}   
-}
 /***BARRA DE MENU******/
 
 .topNav{
@@ -187,6 +151,29 @@ left: 0%;
 position: relative;
 }
 
+
+@media screen and (max-width: 480px) {
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 50vw;
+        height: 10vh;
+        top: 2.5em;
+        margin: 0%;
+    }
+    }
+    @media screen and (max-width: 480px) {
+    .topNav {
+            position:relative;
+            width: 30%;
+            margin-left: 2%;
+            background-color: #010806ed;
+            height: auto;
+        }
+    }
+
+
 .filterList{
     list-style: none;
     display: flex;
@@ -199,26 +186,7 @@ position: relative;
     height:auto;
 }
 
-@media screen and (max-width: 480px) {
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    width: 50vw;
-    height: 10vh;
-    top: 2.5em;
-    margin: 0%;
-}
-}
-@media screen and (max-width: 480px) {
-.topNav {
-        position:relative;
-        width: 30%;
-        margin-left: 2%;
-        background-color: #010806ed;
-        height: auto;
-    }
-}
+
 
 @media screen and (max-width: 480px){
 .filterList {
@@ -232,6 +200,28 @@ nav {
         margin-left: 2%;
     }
 }
+
+.list{
+    text-align: center;
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    background: inherit;
+    width: 8vw;
+    margin: 0%;
+    cursor: pointer;
+    }
+
+
+    .list:hover {
+        background:rgb(56, 155, 73);
+        border-radius: 5px; 
+        transition:0.2s;
+        height: auto;
+        }
+        
+    
 @media screen and (max-width: 480px){
 .list {
     height: 8vh;
@@ -239,12 +229,7 @@ nav {
     padding: 1em;
     padding-left: 0%;
     margin-left: 0%;
-}
-}
-
-
-.list{
-text-align: center;
+    text-align: center;
 align-items: baseline;
 display: flex;
 justify-content: center;
@@ -254,36 +239,44 @@ width: 8vw;
 margin: 0%;
 cursor: pointer;
 }
-
-.list:hover {
-background:rgb(56, 155, 73);
-border-radius: 5px; 
-transition:0.2s;
 }
+
+
 
 /*BOX DE ESPECIES*/
 select {
-    -webkit-appearance: none;
+ -webkit-appearance: none;
     -moz-appearance: none;
     -ms-apperance: none;
     appearance: none;
     outline: 0;
     box-shadow:none;
-    border: 0!important;
-    width: 20px;
-    border: 2px solid rgba(168, 11, 108, 0.37);
-    flex: 0.4;
+    flex: 0.3;
     padding: 0 10px;
     color:white;
     font-family: 'Share Tech Mono', monospace;
     font-size: 20px;
-    background-color: rgba(11, 168, 50, 0.37);
-    border: 2px solid rgba(155, 236, 88, 0.89);
+    background-color: transparent;
+    border: none;
     text-align: center;
+    cursor:pointer;
 }
-select::-ms-expand {
+
+select:focus,
+select:hover{
+    outline:none;
+    background-color:rgb(56, 155, 73);
+    height: 40px;
+    border-radius: 5px; 
+    transition:0.2s;
+}
+
+select option{
+    background-color: rgb(1, 17, 5);
+}
+/*select::-ms-expand {
     display: none;
-    background-color: rgba(11, 168, 50, 0.37);
+    background-color: rgba(2, 46, 13, 0.931);
 }
 
 .select::after{
@@ -301,22 +294,28 @@ select::-ms-expand {
  color: solid rgb(44, 12, 224);
 
 
-}
+}*/
 
 @media screen and (max-width: 480px){
-.select {
+select {
+    display: flex;
     width: 95%;
     height: auto;
-    flex-direction: column;
-    margin:7px;
-    margin-right: 5px;
+    flex-direction: row;
+    margin-right: 10px;
+    text-align: left;
+    justify-content: left;
+padding: 9px;
+margin: 0%;
+cursor: pointer;
 }
 }
 
 
 
 /*ASIDE IZQUIERDA*/
-.aboutStyle{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
+
+.aboutStyle{
 float: left;
 width: 200px;
 position: relative;
@@ -351,6 +350,24 @@ border: 2px solid rgba(97, 224, 12, 0.89);
 transition: 0.2s;
 }
     
+@media screen and (max-width: 480px){
+    #aboutContainer {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin:7px;
+        margin-left: 1px;
+        margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 480px){
+    #headRickMorty{
+        width:50%;
+        height:auto;
+        align-items: center;
+}
+}
 
 
  /******ASIDE DERECHA******/
@@ -377,6 +394,20 @@ transition: 0.2s;
 }
 
 
+@media screen and (max-width: 480px){
+    #asideRightCompute {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin:7px;
+        margin-right: 5px;
+}
+}
+
+
+
+
+
  /***CONTENEDOR DE TARJETAS Y TARJETAS***/
 
 
@@ -392,6 +423,15 @@ text-align: center;
 justify-content: center;
 }
  
+@media screen and (max-width: 480px) {
+    #allCards{
+        align-items: center;
+        margin-left: 18%;
+}   
+}
+
+
+
 .card{ /****estilos de las tarjetas**/
 
 flex-wrap: wrap;

@@ -81,7 +81,7 @@ femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
     allCards.innerHTML = allHTML;
 });
 
-//-------------BOX DE ESPECIES-----------cambiar a menú vertical 
+//-------------BOX DE ESPECIES-----------
 let speciesBox = document.getElementById("speciesBox")
 speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
@@ -92,6 +92,9 @@ speciesBox.addEventListener("change", (event) => {// eslint-disable-line
     }
     allCards.innerHTML = allHTML;
  });
+
+
+ //-----BOTONES-------
 
 
 //*****BOTON INGRESO PAG */
@@ -129,8 +132,7 @@ buttonUp.addEventListener('click', () => {
     document.documentElement.scrollTop = 0;
 });
 
-
- //***** SECCION DE CÁLCULOS***//
+ //------- SECCION DE CÁLCULOS-------//
 
 let femalePercent = computeFemale(resultsData);
 document.getElementById("computeFemale").innerHTML = `Did you know that ${parseInt(femalePercent)}% of the characters are female?`;
@@ -193,4 +195,3 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
 
 });
 
-//------------BOTÓN SUBIR-----
