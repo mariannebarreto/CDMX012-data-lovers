@@ -12,5 +12,5 @@ export default function generatorHtml(aCharacter){
  </span>
 </div>   
  </div>`
-}
 
+}

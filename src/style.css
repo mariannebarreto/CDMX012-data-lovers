@@ -5,7 +5,10 @@ body{
     font-family: 'Share Tech Mono', monospace;
     box-sizing: border-box;
     color: white;
+    width: auto;
+    margin: 0 auto;
 }
+
 
 #welcomePortalContainer{
     box-sizing: border-box;
@@ -13,187 +16,428 @@ body{
     justify-content: center;
     margin: auto;
     flex-direction: column;
+   
 }
 
-
 .logoStyle{
-    width: 800px;
+    width: auto;
     height: 250px;
     text-align: center;
 }
 
-
 .portalStyle{
-width: 500px;
-height:450px;
-border-radius: 300px;
-margin:auto;
-top: 50%;
-margin-top: 50px;
-margin-left: 630px;
+    display: block;
+    width: auto;
+    height:450px;
+    border-radius: 300px;
+    margin-top: 50px;
+    position:relative;
+    left: 35%;
+
 }
 
 .captionPortal{
-    font-family: 'Share Tech Mono', monospace;
     color: rgb(94, 255, 0);
     font-size: 1cm;
     text-align: center;
 }
 
+/*media queries welcome portal*/
+
+@media screen and (max-width:480px) {
+    #welcomePortalContainer{
+    margin: auto;
+    align-content: center;
+    }
+    }
+
+
+@media screen and (max-width: 480px){
+    .logoStyle {
+        display: flex;
+        margin: auto;  
+        width:100%;
+        height: auto;
+    }
+    }
+
+
+    @media screen and (max-width:480px) {
+       .portalStyle{
+      left: -11%;
+      transform: scale(0.8);
+        }
+        }
+    
+
 /*PÁGINA PRINCIPAL*/
 
 .mainPage{
-background-image: url('./assets/fondo-menu.jpg');
-background-size: contain;
-box-sizing:border-box;
-flex-flow: column;
-margin: 0px;
+    background-image: url('./assets/fondo-menu.jpg');
+    width: auto;
+    box-sizing:content-box;
+    flex-flow: column;
+    margin: 0px;
 }
 
+@media screen and (max-width: 700px){
+    .mainPage {
+        display:flex;
+            flex-direction:column;
+            width: auto;
+            overflow: hidden;
+            justify-content: center;
+        }
+    }
+    
+
 .logoStylePrincipal{
-width: 800px;
-height: 250px;
-text-align: center;
+    width: 800px;
+    height: 250px;
+    text-align: center;
 }
+
+@media screen and (max-width: 480px){
+    .logoStylePrincipal {
+        display: flex;
+        margin: auto;
+        transform: scale(0.8);  
+        width:80%;
+        height: auto;
+}
+}
+
+
+#myBtn{
+    display:none;
+    position: fixed;
+    right:10%;
+    bottom: 18%;
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    z-index: 99;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 25px;
+    background-color: rgba(11, 168, 50, 0.37);
+    border: 2px solid rgba(155, 236, 88, 0.89);
+}
+
+ #myBtn:hover{
+     transition:0.2s;
+     border:3px solid rgba(155, 236, 88, 0.89);
+     background-color: rgba(95, 158, 13, 0.486);
+     border-radius: 20px;
+ }
+
+
 /***BARRA DE MENU******/
 
 .topNav{
-height: 110px;
-width:auto;
-background-color: rgba(11, 168, 50, 0.37);
-border: 4px solid rgba(155, 236, 88, 0.89);
-border-radius: 20px;
-margin-left: auto;
-margin-right: auto;
-display: flex;
-z-index: 100;
-top: 0em;
-left: 0%;
-position: relative;
+    background-color: rgba(11, 168, 50, 0.37);
+    border: 4px solid rgba(155, 236, 88, 0.89);
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: center;
+    width: 99%;
+    height: 110px;
+    z-index: 100;
+    top: 0em;
+    left: 0%;
+    position: relative;
 }
 
+
+@media screen and (max-width: 480px) {
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 50vw;
+        height: 10vh;
+        top: 2.5em;
+        margin: 0%;
+    }
+    }
+    @media screen and (max-width: 480px) {
+    .topNav {
+            position:relative;
+            width: 30%;
+            margin-left: 2%;
+            background-color: #010806ed;
+            height: auto;
+        }
+    }
+
+
 .filterList{
-padding-bottom: 3%;
-position: relative;
-top: 0em;
-width: 109vw;
-display: flex;
-height: 80px;
-list-style: none;
-font-size: 25px;
-justify-content: space-around;
-align-items: baseline;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 20px;
+    height:auto;
+}
+
+
+
+@media screen and (max-width: 480px){
+.filterList {
+        display: block;
+        position: relative;
+        width: auto;
+        height: 60vh;
+        text-align: center;
+        align-items: left;
+        padding-left: 30%;
+        margin-left: 2%;
+    }
 }
 
 .list{
-text-align: center;
-align-items: baseline;
-display: flex;
-justify-content: center;
-padding: 9px;
-background: inherit;
-width: 8vw;
-margin: 0%;
-cursor: pointer;
+    text-align: center;
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    background: inherit;
+    width: 8vw;
+    margin: 0%;
+    cursor: pointer;
+    }
+
+
+    .list:hover {
+        background:rgb(56, 155, 73);
+        border-radius: 5px; 
+        transition:0.2s;
+        height: auto;
+        }
+        
+    
+@media screen and (max-width: 480px){
+.list {
+    height: 8vh;
+    width: 50vw;
+    padding: 1em;
+    padding-left: 0%;
+    margin-left: 0%;
+    text-align: center;
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    background: inherit;
+    width: 8vw;
+    margin: 0%;
+    cursor: pointer;
+}
 }
 
-.list:hover {
-background:rgb(56, 155, 73);
-border-radius: 5px; 
+
+
+/*BOX DE ESPECIES*/
+select {
+ -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-apperance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow:none;
+    flex: 0.3;
+    padding: 0 10px;
+    color:white;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    cursor:pointer;
 }
+
+select:focus,
+select:hover{
+    outline:none;
+    background-color:rgb(56, 155, 73);
+    height: 40px;
+    border-radius: 5px; 
+    transition:0.2s;
+}
+
+select option{
+    background-color: rgb(1, 17, 5);
+}
+
+
+@media screen and (max-width: 480px){
+select {
+    display: flex;
+    width: 95%;
+    height: auto;
+    flex-direction: row;
+    margin-right: 10px;
+    text-align: left;
+    justify-content: left;
+    padding: 9px;
+    margin: 0%;
+    cursor: pointer;
+}
+}
+
 
 
 /*ASIDE IZQUIERDA*/
-aside{ /****para acomodar el aside del lado izquierdo y las tarjetas del lado derecho**/
-float: left;
-width: 27vw;
-position: relative;
-}
 
-
-.aboutContainer{ /*******Estilos de la caja verde contenedora*****/
-box-sizing: content-box;
-border-radius: 20px;
-background-color: rgba(11, 168, 50, 0.37);
-border: 2px solid rgba(155, 236, 88, 0.89);
-float: left;
-position: relative;
-height: auto;
-margin:auto;
-display: flex;
-flex-wrap: wrap;
-padding: auto;
-width: 200px;
-padding: 10px;
-margin: 1em;
+.aboutStyle{
+    float: left;
+    width: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(11, 168, 50, 0.37);
+    border: 2px solid rgba(155, 236, 88, 0.89);
+    border-radius: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
 }
 
 .aboutTitle{/***** título de la caja ****/
-height: auto;
-width: auto; 
-margin: 3%;
-padding: 5%;
-padding: 8px;
+    height: auto;
+    width: auto; 
+    text-align: center;
 }
 
 .aboutContent{ /*****contenido de la caja*****/
-height: auto;
-text-align: left;
-flex-direction: column;
-padding: 5px;
+    height: auto;
+    text-align: left;
+    flex-direction: column;
+    padding-left: 4px;
+}
+
+.aboutStyle:hover {
+    background:rgba(15, 194, 15, 0.445);
+    border-radius: 60px; 
+    border: 2px solid rgba(97, 224, 12, 0.89);
+    transition: 0.2s;
+}
+    
+@media screen and (max-width: 480px){
+    #aboutContainer {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin:7px;
+        margin-left: 1px;
+        margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 480px){
+    #headRickMorty{
+        width:50%;
+        height:auto;
+        align-items: center;
+}
 }
 
 
  /******ASIDE DERECHA******/
 
  .asideRightCompute{
-box-sizing: content-box;
-border-radius: 20px;
-background-color:rgba(11, 168, 50, 0.37);
-border:2px solid rgba(155, 236, 88, 0.89);
-float: right;
-justify-content: center;
-height: 300px;
-margin:auto;
-display: flex;
-flex-wrap: wrap;
-padding: auto;
-width: 200px;
-padding: 10px;
-margin: 1em;
- }
-  
-#dogCompute{
-height: 110px;
+    float: right;
+    width: 200px;
+    flex-direction: column;
+    background-color: rgba(11, 168, 50, 0.37);
+    border: 2px solid rgba(155, 236, 88, 0.89);
+    border-radius: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
 }
+
+.asideRightCompute:hover {
+    background:rgba(15, 194, 15, 0.445);
+    border-radius: 60px; 
+    border: 2px solid rgba(97, 224, 12, 0.89);
+    transition: 0.2s;
+}
+
+
+@media screen and (max-width: 480px){
+    #asideRightCompute {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin:7px;
+        margin-right: 5px;
+}
+}
+
  /***CONTENEDOR DE TARJETAS Y TARJETAS***/
 
-.allCards{/*contenedor de tarjetas*/
-box-sizing:border-box;
-padding-bottom: 5%;
-position: relative;
-top: 2em;
-margin:40px 300px 40px 50px;
-display:grid;
-grid-template-columns: repeat(3,7cm); 
-flex-direction: row;
-align-content: stretch;
-height: auto;
-gap: 0.9cm;
+
+#allCards{/*contenedor de tarjetas*/
+    padding: 1em;
+    margin-top: 20px;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    flex-direction: column;
+    align-content: stretch;
+    height: auto;
+    text-align: center;
+    justify-content: center;
 }
  
+@media screen and (max-width: 480px) {
+    #allCards{
+        align-items: center;
+        margin-left: 18%;
+}   
+}
+
+
+
 .card{ /****estilos de las tarjetas**/
-display:inline-flex;
-position: relative;
-flex-wrap: wrap;
-height:400px;
-width:220px;
-overflow: hidden;
-border-radius: 15px;
-border:4px solid rgb(0, 217, 255);
-justify-content: center;
-text-align:center;
-align-items: center;
-margin-left: -8px;
-background-color: rgba(2, 55, 85, 0.377);
+
+    flex-wrap: wrap;
+    height:400px;
+    width:220px;
+    overflow: hidden;
+    justify-content: center;
+    text-align:center;
+    margin-top: 12px;
+    border-radius: 15px;
+    border:4px solid rgb(0, 217, 255);
+    background-color: rgba(2, 55, 85, 0.377);
+    cursor:pointer;
+}
+
+.card:hover {
+    background:rgba(9, 178, 207, 0.507);
+    border-radius: 50px; 
+    transition:0.3s;
+    }
+
+/**flexbox Chart**/  
+
+.pieChart {
+
+    flex-flow: row;
+    height:400px;
+    width:220px;
+    padding: auto;
+    margin: auto;
+    background-color: rgba(0, 7, 10, 0.658);
+    
 }

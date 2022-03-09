@@ -6,21 +6,24 @@ import { maleOrder } from "./data.js";
 import { femaleOrder } from "./data.js";
 import { speciesOrder } from "./data.js";
 import { relevanceOrder } from "./data.js";
+import { computeFemale } from './data.js';
 
 
 //-----------------CONSTANTE para el llamado de todas las tajetas de personajes
 const resultsData = data.results;
 
 window.addEventListener('DOMContentLoaded', () => {
-   
+
     let allHTML = ""
     let allCards = document.getElementById("allCards")
     resultsData.forEach(character => {
         allHTML += generatorHtml(character)
     })
     allCards.innerHTML = allHTML
- 
+
 });
+
+
 
 // CONSTANTE MADRE --------
 let allCards = document.getElementById("allCards")
@@ -31,12 +34,12 @@ abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
     let allHTML = "";
-    for (let i = 0; i < alphabeticOrderResults.length; i++){
+    for (let i = 0; i < alphabeticOrderResults.length; i++) {
         allHTML += generatorHtml(alphabeticOrderResults[i]);
     }
-        
     allCards.innerHTML = allHTML;
 });
+
 
 
 //------------CBA ORDEN------------
@@ -45,7 +48,7 @@ cbaOrderLi.addEventListener("click", (event) => {// eslint-disable-line
 
     let alphabeticOrderBackResults = alphabeticOrderBack(resultsData);// eslint-disable-line
     let allHTML = "";
-    for (let i = 0; i <alphabeticOrderBackResults.length; i++) {
+    for (let i = 0; i < alphabeticOrderBackResults.length; i++) {
         allHTML += generatorHtml(alphabeticOrderBackResults[i]);
     }
 
@@ -78,37 +81,63 @@ femaleOrderLi.addEventListener("click", (event) => {// eslint-disable-line
     allCards.innerHTML = allHTML;
 });
 
-//-------------BOX DE ESPECIES-----------cambiar a menú vertical 
-let speciesBox= document.getElementById("speciesBox")
+//-------------BOX DE ESPECIES-----------
+let speciesBox = document.getElementById("speciesBox")
 speciesBox.addEventListener("change", (event) => {// eslint-disable-line
 
     let speciesFilterResults = speciesOrder(resultsData, speciesBox.value)
     let allHTML = " "
-       for (let i = 0; i < speciesFilterResults.length; i++){
+    for (let i = 0; i < speciesFilterResults.length; i++) {
         allHTML += generatorHtml(speciesFilterResults[i]);
     }
     allCards.innerHTML = allHTML;
- });
+});
+
+
+//-----BOTONES-------
 
 
 //*****BOTON INGRESO PAG */
 
-function enterSite (){
+function enterSite() {
     let screenPortal = document.getElementById("welcomePortalContainer");
-    screenPortal. style.display = "none";
-    document.getElementById("mainPage").style.display= "block";
+    screenPortal.style.display = "none";
+    document.getElementById("mainPage").style.display = "block";
 }
-document.getElementById("portalEnter").onclick = function() {enterSite()};
+document.getElementById("portalEnter").onclick = function () { enterSite() };
 
 //*****BOTÓN DE REGRESO*****/
-function backSite(){
+function backSite() {
     let screenMain = document.getElementById("mainPage");
-    screenMain. style.display = "none";
-    document.getElementById("welcomePortalContainer").style.display= "block";
-  }
-  
+    screenMain.style.display = "none";
+    document.getElementById("welcomePortalContainer").style.display = "block";
+}
+
 document.getElementById("portalBackHome").onclick = function () { backSite() };
-  
+
+
+//****BOTÓN UP ********/
+let buttonUp = document.getElementById("myBtn");
+
+window.onscroll = function () {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        buttonUp.style.display = "block";
+    } else {
+        buttonUp.style.display = "none";
+    }
+};
+
+buttonUp.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+//------- SECCION DE CÁLCULOS-------//
+
+let femalePercent = computeFemale(resultsData);
+document.getElementById("computeFemale").innerHTML = `Did you know that ${parseInt(femalePercent)}% of the characters are female?`;
+
+
 //***** SECCION DE TOP TEN CHART*/
 
 let top10orderLi = document.getElementById("top10order")
@@ -122,7 +151,7 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
     }
     let topTenChart = document.getElementById("topTenChart")
     const topTenChartResults = new Chart(topTenChart, { // eslint-disable-line
-        type: "bar",
+        type: "pie",
         data: {
             labels: namesChart,
             datasets: [{
@@ -142,13 +171,16 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
 
                 ],
                 borderWidth: 1
+                
 
             }]
         },
         options: {
+            
             scales: {
                 y: {
                     begInAtZero: true
+                    
                 }
             }
         }
@@ -156,31 +188,10 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
 
     let topTenResults = relevanceOrder(resultsData); // eslint-disable-line
     let allHTML = ""
-    resultsData.forEach(topTenResults => {
-        allHTML += generatorHtml(topTenResults);
-    })
+    for (let i = 0; i < 10; i++) {
+        allHTML += generatorHtml(topTenResults[i]);
+    }
+   
     allCards.innerHTML = allHTML;
 
-
-})
-
-
-
-
-
-
-//******************OPCION 1 DE ELI PARA EL SHOW AND HIDE****/
-
-
-//***let buttonEnter = document.getElementById("portalEnter");****
-
-//**buttonEnter.addEventListener("click", (event) => { // eslint-disable-line
-
-    //**document.getElementById("welcomePortalContainer").innerHTML = "";
-    //**console.log("welcomePortalContainer");
-//**})
-
-//**let buttonBack = document.getElementById("portalBackHome")
-//**buttonBack.addEventListener("click", (event) => { // eslint-disable-line
-
-// *});
+});

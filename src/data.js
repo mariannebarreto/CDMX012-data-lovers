@@ -1,4 +1,8 @@
 //****************DECLARAMOS FUNCIONES PARA LAS SECCIONES******/
+
+
+
+
 //ordenado alfabético 
 export const alphabeticOrder = (resultsData) => {
   return [].slice.call(resultsData).sort((character1, character2) => {
@@ -48,15 +52,20 @@ export const speciesOrder = (resultsData, specie) => {
   return resultsSpecies;
 }
 
-//Claculo del top 10 personajes que salen en la serie
 
-/*export const relevanceOrder = (resultsData) => {
-  return [].slice.call(resultsData).sort((character1, character2) => {
-    return (character2.episode.length - character1.episode.length) ? -1 : 1;// de mayor a menor top ten
-  });
-};*/
+
+// Cálculo género de personajes
+
+export const computeFemale = (resultsData) => {
+  let femaleResults = []
+  femaleResults = femaleOrder(resultsData)
+  return femaleResults.length * 100 / resultsData.length;
+}
+
+
+//Cálculo del top 10 personajes que salen en la serie
+
 export const relevanceOrder = (resultsData) => resultsData.sort((character1, character2) => {
   return (character2.episode.length - character1.episode.length);// de mayor a menor top ten
-});
-
+})
 
