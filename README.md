@@ -82,8 +82,8 @@ Parte fundamental para aterrizar el proyecto , fue el definir los puntos necesar
 
 ## 3. Prototipo de baja fidelidad
 Los prototipos realizados en esta etapa del proyecto se hicieron basados en la información que teníamos recabada. El primero fue un acercamiento a las ideas mas locas que se nos podían ocurrir y el segundo ya un poco más aterrizado a las secciones que tendrá la página. 
-![Prototipo Low 1](/src/assets/prototipoLow1.jpeg)
-![Prototipo Low 2](/src/assets/prototipoLow2.jpeg)
+![Prototipo Low 1](/src/assets/prototipoLow1.jpg)
+![Prototipo Low 2](/src/assets/prototipoLow2.jpg)
 
 ## 4. Prototipo de alta fidelidad
 Continuando con la idea de crear secciones, reflejado en los bocetos anteriores, se trabajó en un [prototipo de alta fidelidad](https://www.figma.com/proto/7SYhVZosKhp56iL0cTP1pe/Dex-Rick-and-Morty?node-id=11%3A7&scaling=contain&page-id=0%3A1&starting-point-node-id=11%3A7&show-proto-sidebar=1) en Figma. 
