@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Data Lovers</title>
@@ -7,13 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <!---------------------JQUERY TEST------------------------------------->
-  <!---------------------JQUERY TEST------------------------------------->
-  <!--------------------JQUERY TEST DOWN--------------------------------->
+  
+  <!--------------------JQUERY TEST--------------------------------->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!------------------JQUERY TEST UP------------------------------------->
-  <!---------------------JQUERY TEST------------------------------------->
-  <!---------------------JQUERY TEST------------------------------------->
+  
 </head>
 
 <!---PORTADA-->
@@ -21,11 +19,11 @@
 <body>
   <section id="welcomePortalContainer">
     <header style="text-align: center;">
-      <img class="logoStyle" src="/assets/logo.jpg">
+      <img class="logoStyle" src="assets/logo.jpg">
     </header>
 
     <figure>
-      <img class="portalStyle" src="/assets/portalCrop.gif" id="portalEnter" alt="Portal enter"><br><br><br>
+      <img class="portalStyle" src="assets/portalCrop.gif" id="portalEnter" alt="Portal enter"><br><br><br>
       <figcaption class="captionPortal">ENTER THE PORTAL AND GET SCHWIFTY!!!</figcaption>
     </figure>
 
@@ -35,13 +33,13 @@
 
   <section id="mainPage" class="mainPage">
     <header style="text-align: center;">
-      <img class="logoStylePrincipal" src="/assets/rickymorty_bleed.png">
+      <img class="logoStylePrincipal" src="assets/rickymorty_bleed.png">
     </header>
 
     <!----------BARRA DE MENÚ-------------------->
 
     <nav class="topNav">
-      <img src="/assets/mr-meeseeks-kirkland.png" alt="what do you whant?" height="110px" text-align="left">
+      <img src="assets/mr-meeseeks-kirkland.png" alt="what do you whant?" height="110px" text-align="left">
       <div class="menu-btn" style="left:220px"></div>
       <ul class="filterList">
         <li class="list" id="abcOrder">ABC ORDER</li>
@@ -49,24 +47,24 @@
         <li class="list" id="maleOrder">MALE</li>
         <li class="list" id="femaleOrder">FEMALE</li>
         <li class="list" id="top10order">TOP TEN </li>
-        <select name ="Species" id="speciesBox">
+        <select name="Species" id="speciesBox">
           <option selected disabled> SPECIE </option>
-            <option value="Human">Human</option>
-            <option value="Robot">Robot</option>
-            <option value="Humanoid">Humanoid</option>
-            <option value="Alien">Alien</option>
-            <option value="Poopybutthole">Poopybutthole</option>
-            <option value="unknown">unknown</option>
-            <option value="Mytholog">Mytholog</option>
-            <option value="Vampire">Vampire</option>
-            <option value="Cronenberg">Cronenberg</option>
-            <option value="Animal">Animal</option>
-            <option value="Parasite">Parasite</option>
-            <option value="Disease">Disease</option>
-          </select>
+          <option value="Human">Human</option>
+          <option value="Robot">Robot</option>
+          <option value="Humanoid">Humanoid</option>
+          <option value="Alien">Alien</option>
+          <option value="Poopybutthole">Poopybutthole</option>
+          <option value="unknown">unknown</option>
+          <option value="Mytholog">Mytholog</option>
+          <option value="Vampire">Vampire</option>
+          <option value="Cronenberg">Cronenberg</option>
+          <option value="Animal">Animal</option>
+          <option value="Parasite">Parasite</option>
+          <option value="Disease">Disease</option>
+        </select>
         </label>
       </ul>
-      <img src="/assets/sticker_2060.png" alt="sticker Portal" id="portalBackHome" height="110px" text-align="right">
+      <img src="assets/sticker_2060.png" alt="sticker Portal" id="portalBackHome" height="110px" text-align="right">
     </nav>
 
 
@@ -74,7 +72,7 @@
     <aside>
       <div id="aboutContainer" class="aboutStyle">
         <h2 class="aboutTitle"> RICK &amp; MORTY</h2>
-        <img src="/assets/rick_and_morty_minecraft_1447.png" alt="headRickMorty" id="headRickMorty" height="90px">
+        <img src="assets/rick_and_morty_minecraft_1447.png" alt="headRickMorty" id="headRickMorty" height="90px">
         <p class="aboutContent">An American adult animated science fiction sitcom created by Justin Roiland and Dan
           Harmon
           for Cartoon Network's nighttime Adult Swim programming block. The series follows the misadventures
@@ -88,12 +86,12 @@
     <aside>
       <div id="asideRightCompute" class="asideRightCompute">
         <h2 id="hideDog">LOOK AT ME, YOU SON OF A ****!</h2>
-        <img src="/assets/rick-and-morty-lawnmower-dog.png" alt="sticker dog" id="dogCompute"  height="110px" >
+        <img src="assets/rick-and-morty-lawnmower-dog.png" alt="sticker dog" id="dogCompute" height="110px">
         <div id="computeFemale"></div>
       </div>
     </aside>
-<!--------BOTÓN UP----------->
-  <button id="myBtn">&#8593</button>
+    <!--------BOTÓN UP----------->
+    <button id="myBtn">&#8593</button>
 
     <!----------------------------------TARJETAS DE DATA (MODULAR)--------------------------------------------->
     <div id="allCards" class="allCards"></div>
@@ -101,12 +99,12 @@
 
     <script src="main.js" type="module"></script>
 
-        <!----------------------------------------------------------CHART-------------------------------------------->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-        <div>
-          <canvas width="200" height="200" id="topTenChart"></canvas>
-        </div>
-      </section>
-    </body>
-    </html>
-        
+    <!----------------------------------------------------------CHART-------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <div style="position: relative; height:30vh; width: 50vw" class="pieChart">
+      <canvas width="200" height="200" id="topTenChart"></canvas>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -63,13 +63,8 @@ export const computeFemale = (resultsData) => {
 }
 
 
-//Claculo del top 10 personajes que salen en la serie
+//Cálculo del top 10 personajes que salen en la serie
 
-/*export const relevanceOrder = (resultsData) => {
-  return [].slice.call(resultsData).sort((character1, character2) => {
-    return (character2.episode.length - character1.episode.length) ? -1 : 1;// de mayor a menor top ten
-  });
-};*/
 export const relevanceOrder = (resultsData) => resultsData.sort((character1, character2) => {
   return (character2.episode.length - character1.episode.length);// de mayor a menor top ten
 })
