@@ -85,6 +85,7 @@ Los prototipos realizados en esta etapa del proyecto se hicieron basados en la i
 ![Prototipo Low 1](/src/assets/prototipoLow1.jpg)
 ![Prototipo Low 2](/src/assets/prototipoLow2.jpg)
 
+
 ## 4. Prototipo de alta fidelidad
 Continuando con la idea de crear secciones, reflejado en los bocetos anteriores, se trabajó en un [prototipo de alta fidelidad](https://www.figma.com/proto/7SYhVZosKhp56iL0cTP1pe/Dex-Rick-and-Morty?node-id=11%3A7&scaling=contain&page-id=0%3A1&starting-point-node-id=11%3A7&show-proto-sidebar=1) en Figma. 
 
