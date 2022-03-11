@@ -32,7 +32,7 @@ let allCards = document.getElementById("allCards")
 let abcOrderLi = document.getElementById("abcOrder");
 abcOrderLi.addEventListener("click", (event) => { // eslint-disable-line
 
-    let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line
+    let alphabeticOrderResults = alphabeticOrder(resultsData); // eslint-disable-line//
     let allHTML = "";
     for (let i = 0; i < alphabeticOrderResults.length; i++) {
         allHTML += generatorHtml(alphabeticOrderResults[i]);
@@ -171,16 +171,16 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
 
                 ],
                 borderWidth: 1
-                
+
 
             }]
         },
         options: {
-            
+
             scales: {
                 y: {
                     begInAtZero: true
-                    
+
                 }
             }
         }
@@ -191,7 +191,7 @@ top10orderLi.addEventListener("click", (event) => { // eslint-disable-line
     for (let i = 0; i < 10; i++) {
         allHTML += generatorHtml(topTenResults[i]);
     }
-   
+
     allCards.innerHTML = allHTML;
 
 });

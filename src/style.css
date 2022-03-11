@@ -407,7 +407,6 @@ select {
 }
 
 
-
 .card{ /****estilos de las tarjetas**/
 
     flex-wrap: wrap;
@@ -434,10 +433,11 @@ select {
 .pieChart {
 
     flex-flow: row;
-    height:400px;
-    width:220px;
+    height: 15vh;
+    width:50vw;
     padding: auto;
     margin: auto;
     background-color: rgba(0, 7, 10, 0.658);
+    position:static;
     
 }

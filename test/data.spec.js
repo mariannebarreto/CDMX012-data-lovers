@@ -1,6 +1,6 @@
 import { it } from 'eslint/lib/rule-tester/rule-tester';
 import { alphabeticOrder, alphabeticOrderBack, maleOrder, femaleOrder, speciesOrder, relevanceOrder, computeFemale } from '../src/data.js';
-import { data1, data2, dataCba, dataMale, dataFemale, dataSpecies, dataInicial,dataTop10,} from "./dataMock";
+import { data1, data2, dataCba, dataMale, dataFemale, dataSpecies, dataInicial, dataTop10, } from "./dataMock";
 
 
 
@@ -17,10 +17,10 @@ describe('alphabeticOrderBack', () => {
   it('is a function', () => {
     expect(typeof alphabeticOrderBack).toBe('function');
   });
-    it("return array in order from Z-A", () => {
-      expect(alphabeticOrderBack(data1.results)).toEqual(dataCba.results);
-    });
+  it("return array in order from Z-A", () => {
+    expect(alphabeticOrderBack(data1.results)).toEqual(dataCba.results);
   });
+});
 
 
 
@@ -40,7 +40,7 @@ describe('femaleOrder', () => {
   });
   it("return array from gender Female", () => {
     expect(femaleOrder(data1.results)).toEqual(dataFemale.results);
-});
+  });
 });
 
 
@@ -49,20 +49,18 @@ describe('speciesOrder', () => {
     expect(typeof speciesOrder).toBe('function');
   });
   it("return array from Species", () => {
-    expect(speciesOrder(data1.results,"Alien")).toEqual(dataSpecies.results);
+    expect(speciesOrder(data1.results, "Alien")).toEqual(dataSpecies.results);
   });
 });
 
-let relevanceResults = relevanceOrder(dataInicial.results);
-for (let i = 0; i < relevanceResults.length; i++)
 
 describe('relevanceOrder', () => {
   it('is a function', () => {
     expect(typeof relevanceOrder).toBe('function');
   });
-    it("return array from episode relevance apparition Order", () => {
-      expect(relevanceOrder(dataInicial.results)).toEqual(dataTop10.results);
-    });
+  it("return array from episode relevance apparition Order", () => {
+    expect(relevanceOrder(dataInicial.results)).toEqual(dataTop10.results);
+  });
 });
 
 describe('computeFemale', () => {
