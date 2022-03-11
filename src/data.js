@@ -69,4 +69,3 @@ export const relevanceOrder = (resultsData) => resultsData.sort((character1, cha
   return (character2.episode.length - character1.episode.length);// de mayor a menor top ten
 })
 
-

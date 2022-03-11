@@ -54,9 +54,8 @@ describe('speciesOrder', () => {
 });
 
 let relevanceResults = relevanceOrder(dataInicial.results);
-for (let i = 0; i < relevanceResults.length; i++) {
-  console.log(relevanceResults[i].name);
-}
+for (let i = 0; i < relevanceResults.length; i++)
+
 describe('relevanceOrder', () => {
   it('is a function', () => {
     expect(typeof relevanceOrder).toBe('function');
@@ -74,3 +73,4 @@ describe('computeFemale', () => {
     expect(computeFemale(data1.results)).toEqual(50.0);
   });
 });
+
